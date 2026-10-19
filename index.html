@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chetan Khairnar | Python Backend Developer & REST API Specialist</title>
+    <meta name="description" content="Portfolio of Chetan Uttam Khairnar - Python Backend Developer specializing in Django, Django REST Framework, relational databases, and scalable backend architectures.">
+    <meta name="keywords" content="Chetan Khairnar, Python Developer, Django, DRF, REST API, Backend Engineer, Savitribai Phule Pune University, Portfolio">
+    <meta name="author" content="Chetan Uttam Khairnar">
+
+    <!-- Open Graph / Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Chetan Khairnar | Python Backend Developer">
+    <meta property="og:description" content="M.Sc. Computer Science graduate & Python Backend Developer specializing in Django, DRF, JWT Authentication, and high-performance databases.">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-cyan-500 selection:text-black">
+
+    <!-- Background Canvas Matrix / Particle Effect -->
+    <canvas id="cyber-canvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
+    <div class="gradient-glow-1 fixed -top-40 -left-40 w-96 h-96 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="gradient-glow-2 fixed top-1/2 -right-40 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="gradient-glow-3 fixed -bottom-40 left-1/3 w-96 h-96 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800/80 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#hero" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center font-mono font-bold text-slate-950 shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+                    &lt;CK/&gt;
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-bold text-lg tracking-tight group-hover:text-cyan-400 transition-colors">Chetan Khairnar</span>
+                    <span class="text-xs font-mono text-cyan-400/80 tracking-wider">PYTHON BACKEND DEV</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
+                <a href="#skills" class="hover:text-cyan-400 transition-colors">Skills</a>
+                <a href="#experience" class="hover:text-cyan-400 transition-colors">Experience</a>
+                <a href="#projects" class="hover:text-cyan-400 transition-colors">Projects</a>
+                <a href="#terminal" class="hover:text-cyan-400 transition-colors flex items-center gap-1.5 text-cyan-400">
+                    <i class="fas fa-terminal text-xs"></i> Terminal
+                </a>
+                <a href="#api-playground" class="hover:text-cyan-400 transition-colors flex items-center gap-1.5 text-emerald-400">
+                    <i class="fas fa-bolt text-xs"></i> API Sandbox
+                </a>
+                <a href="#certifications" class="hover:text-cyan-400 transition-colors">Certs</a>
+                <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="hidden lg:flex items-center gap-3">
+                <a href="#contact" class="px-4 py-2 rounded-lg bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 text-sm font-semibold transition-all hover:scale-105">
+                    <i class="fas fa-paper-plane mr-1.5"></i> Get in Touch
+                </a>
+                <button id="sound-toggle" class="p-2 rounded-lg border border-slate-800 text-slate-400 hover:text-cyan-400 hover:border-slate-700 transition" title="Toggle audio clicks">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Hamburger -->
+            <button id="mobile-toggle" class="md:hidden text-slate-300 hover:text-white p-2 text-xl focus:outline-none" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 border-b border-slate-800 px-6 py-5 flex-col gap-4 font-medium backdrop-blur-xl">
+            <a href="#about" class="py-2 border-b border-slate-800/50 hover:text-cyan-400">About</a>
+            <a href="#skills" class="py-2 border-b border-slate-800/50 hover:text-cyan-400">Skills</a>
+            <a href="#experience" class="py-2 border-b border-slate-800/50 hover:text-cyan-400">Experience</a>
+            <a href="#projects" class="py-2 border-b border-slate-800/50 hover:text-cyan-400">Projects</a>
+            <a href="#terminal" class="py-2 border-b border-slate-800/50 text-cyan-400">Live Terminal</a>
+            <a href="#api-playground" class="py-2 border-b border-slate-800/50 text-emerald-400">REST API Sandbox</a>
+            <a href="#certifications" class="py-2 border-b border-slate-800/50 hover:text-cyan-400">Certifications</a>
+            <a href="#contact" class="py-2 hover:text-cyan-400">Contact</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative z-10 pt-28">
+
+        <!-- HERO SECTION -->
+        <section id="hero" class="min-h-[92vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12 relative">
+            <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Info -->
+                <div class="lg:col-span-7 space-y-6 text-left">
+                    <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-400 text-xs font-mono tracking-wide">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        READY FOR HIRE &bull; JUNIOR BACKEND DEVELOPER
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                        Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-blue-500">Chetan Khairnar</span>
+                        <br>
+                        <span class="text-3xl sm:text-4xl lg:text-5xl text-slate-300 font-bold">I architect robust, scalable APIs.</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
+                        M.Sc. in Computer Science graduate specializing in <strong class="text-cyan-400">Python, Django &amp; Django REST Framework</strong>. Passionate about building high-throughput REST APIs, resilient database schemas (Oracle, MySQL), JWT authentication, and secure enterprise backend services.
+                    </p>
+
+                    <!-- Meta Badges -->
+                    <div class="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-400 pt-1">
+                        <span class="flex items-center gap-1.5 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800">
+                            <i class="fas fa-map-marker-alt text-rose-400"></i> Nashik, Maharashtra, India
+                        </span>
+                        <span class="flex items-center gap-1.5 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800">
+                            <i class="fas fa-graduation-cap text-cyan-400"></i> M.Sc. Computer Science (CGPA: 7.25)
+                        </span>
+                        <span class="flex items-center gap-1.5 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800">
+                            <i class="fas fa-bolt text-amber-400"></i> REST APIs &bull; JWT &bull; ORM
+                        </span>
+                    </div>
+
+                    <!-- Call To Actions -->
+                    <div class="flex flex-wrap items-center gap-4 pt-3">
+                        <a href="#projects" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold text-sm shadow-lg shadow-cyan-500/25 transition-all hover:scale-105 flex items-center gap-2">
+                            <span>Explore Projects</span>
+                            <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                        <a href="#terminal" class="px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-cyan-400 border border-slate-700/80 font-mono text-sm transition-all hover:border-cyan-500/50 flex items-center gap-2">
+                            <i class="fas fa-terminal"></i>
+                            <span>Launch Terminal</span>
+                        </a>
+                        <button id="copy-email-btn" class="px-4 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 text-sm transition-all flex items-center gap-2" title="Copy Email">
+                            <i class="fas fa-copy text-cyan-400"></i>
+                            <span id="copy-email-text">chetan.khairnar234@gmail.com</span>
+                        </button>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="flex items-center gap-5 pt-4 text-xl text-slate-400">
+                        <a href="https://github.com/ChetanKhairnar7-ui" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors" title="GitHub Profile">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:chetan.khairnar234@gmail.com" class="hover:text-cyan-400 transition-colors" title="Send Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="tel:+918308952105" class="hover:text-emerald-400 transition-colors" title="Call Chetan">
+                            <i class="fas fa-phone-alt"></i>
+                        </a>
+                        <a href="https://wa.me/918308952105" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors" title="WhatsApp Message">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Right Interactive Code / Server Card -->
+                <div class="lg:col-span-5">
+                    <div class="relative group">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition duration-1000"></div>
+                        <div class="relative bg-slate-900/90 border border-slate-800 rounded-2xl p-6 shadow-2xl backdrop-blur-xl font-mono text-xs text-slate-300 space-y-4">
+                            <!-- Card Header -->
+                            <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-3 h-3 rounded-full bg-rose-500/80"></div>
+                                    <div class="w-3 h-3 rounded-full bg-amber-500/80"></div>
+                                    <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
+                                    <span class="ml-2 text-slate-400 text-xs">backend_server.py</span>
+                                </div>
+                                <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 border border-emerald-800/60 font-semibold flex items-center gap-1">
+                                    <i class="fas fa-circle text-[6px] animate-ping"></i> LIVE 200 OK
+                                </span>
+                            </div>
+
+                            <!-- Code Block with Syntax Highlighting -->
+                            <pre class="overflow-x-auto text-slate-300 leading-relaxed font-mono py-1">
+<span class="text-purple-400">from</span> rest_framework <span class="text-purple-400">import</span> viewsets, permissions
+<span class="text-purple-400">from</span> rest_framework.response <span class="text-purple-400">import</span> Response
+<span class="text-purple-400">from</span> .models <span class="text-purple-400">import</span> DeveloperProfile
+
+<span class="text-blue-400">class</span> <span class="text-yellow-300 font-semibold">ChetanKhairnarViewSet</span>(viewsets.ReadOnlyModelViewSet):
+    <span class="text-slate-500">"""
+    REST API Endpoint exposing Chetan's core capabilities
+    """</span>
+    queryset = DeveloperProfile.objects.all()
+    permission_classes = [permissions.AllowAny]
+
+    <span class="text-blue-400">def</span> <span class="text-cyan-400">get_developer_status</span>(self, request):
+        <span class="text-purple-400">return</span> Response({
+            <span class="text-emerald-300">"candidate"</span>: <span class="text-emerald-300">"Chetan Uttam Khairnar"</span>,
+            <span class="text-emerald-300">"primary_stack"</span>: [<span class="text-emerald-300">"Python"</span>, <span class="text-emerald-300">"Django"</span>, <span class="text-emerald-300">"DRF"</span>, <span class="text-emerald-300">"SQL"</span>],
+            <span class="text-emerald-300">"internship"</span>: <span class="text-emerald-300">"Paarsh Infotech (6 Months)"</span>,
+            <span class="text-emerald-300">"degree"</span>: <span class="text-emerald-300">"M.Sc. Computer Science (2024)"</span>,
+            <span class="text-emerald-300">"status"</span>: <span class="text-emerald-300">"Ready for Backend Engineer role"</span>,
+            <span class="text-emerald-300">"passion"</span>: <span class="text-emerald-300">"Designing optimized relational schemas & APIs"</span>
+        })</pre>
+
+                            <!-- Live Metric Badges -->
+                            <div class="grid grid-cols-3 gap-2 pt-3 border-t border-slate-800 text-center">
+                                <div class="bg-slate-950/60 p-2.5 rounded-lg border border-slate-800/80">
+                                    <div class="text-cyan-400 font-bold text-base">M.Sc. CS</div>
+                                    <div class="text-[10px] text-slate-400">7.25 CGPA</div>
+                                </div>
+                                <div class="bg-slate-950/60 p-2.5 rounded-lg border border-slate-800/80">
+                                    <div class="text-emerald-400 font-bold text-base">6+ Mo</div>
+                                    <div class="text-[10px] text-slate-400">Intern Exp</div>
+                                </div>
+                                <div class="bg-slate-950/60 p-2.5 rounded-lg border border-slate-800/80">
+                                    <div class="text-yellow-400 font-bold text-base">6 Certs</div>
+                                    <div class="text-[10px] text-slate-400">Verified</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- STATS BAR -->
+        <section class="py-8 border-y border-slate-800/80 bg-slate-900/40 backdrop-blur-md">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    <div class="space-y-1">
+                        <div class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 counter" data-target="2">2+</div>
+                        <div class="text-xs text-slate-400 uppercase tracking-wider font-mono">Degrees in CS (B.Sc &amp; M.Sc)</div>
+                    </div>
+                    <div class="space-y-1">
+                        <div class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400 counter" data-target="20">20+</div>
+                        <div class="text-xs text-slate-400 uppercase tracking-wider font-mono">REST Endpoints Architected</div>
+                    </div>
+                    <div class="space-y-1">
+                        <div class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 counter" data-target="6">6</div>
+                        <div class="text-xs text-slate-400 uppercase tracking-wider font-mono">Professional Certifications</div>
+                    </div>
+                    <div class="space-y-1">
+                        <div class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 counter" data-target="100">100%</div>
+                        <div class="text-xs text-slate-400 uppercase tracking-wider font-mono">Dedication to Backend Code</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="space-y-4 text-center mb-16">
+                <div class="text-xs font-mono text-cyan-400 uppercase tracking-widest">&lt;About /&gt;</div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Engineering Reliable, Maintainable Backends</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">
+                    A deep dive into my background, computational philosophy, and the backend values I bring to development teams.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                
+                <!-- Left Bio Card -->
+                <div class="lg:col-span-7 space-y-6 bg-slate-900/60 p-8 rounded-2xl border border-slate-800 backdrop-blur-sm">
+                    <h3 class="text-2xl font-bold text-white flex items-center gap-3">
+                        <i class="fas fa-server text-cyan-400"></i> Backend-First Mindset
+                    </h3>
+                    <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+                        I am a <strong>Python Backend Developer</strong> with an <strong>M.Sc. in Computer Science</strong> from Savitribai Phule Pune University. Through 6 months of intense industry internship at <em>Paarsh Infotech PVT. LTD.</em> and rigorous full-stack projects, I have cultivated specialized expertise in building reliable, database-driven architectures.
+                    </p>
+                    <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+                        My primary domain lies in crafting clean <strong>Django REST Framework (DRF)</strong> APIs, implementing <strong>JWT-based stateless authentication</strong>, fine-tuning <strong>SQL queries</strong> for relational databases (Oracle SQL, MySQL), and enforcing robust request validation and error handling.
+                    </p>
+                    <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+                        In addition to backend engineering, I possess multi-platform versatility with hands-on experience in <strong>Flutter, Java, Kotlin, and Firebase</strong>, allowing me to collaborate smoothly with mobile and frontend engineers.
+                    </p>
+
+                    <!-- Key Pillars -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+                            <div class="text-cyan-400 font-semibold flex items-center gap-2 mb-1">
+                                <i class="fas fa-shield-alt"></i> Secure Architecture
+                            </div>
+                            <p class="text-xs text-slate-400">Role-Based Access Control (RBAC), JWT token management, and airtight request sanitization.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+                            <div class="text-emerald-400 font-semibold flex items-center gap-2 mb-1">
+                                <i class="fas fa-database"></i> Database Mastery
+                            </div>
+                            <p class="text-xs text-slate-400">Optimized schema models, indexing strategies, normalization, and relational mapping.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+                            <div class="text-blue-400 font-semibold flex items-center gap-2 mb-1">
+                                <i class="fas fa-tachometer-alt"></i> Performance &amp; Caching
+                            </div>
+                            <p class="text-xs text-slate-400">Experience implementing caching layers to minimize database roundtrips and accelerate responses.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+                            <div class="text-purple-400 font-semibold flex items-center gap-2 mb-1">
+                                <i class="fas fa-vial"></i> Comprehensive API Testing
+                            </div>
+                            <p class="text-xs text-slate-400">End-to-end API test suites using Postman and Swagger for clean developer contracts.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Education & Contact Card -->
+                <div class="lg:col-span-5 space-y-6">
+                    <!-- Education Accordion/Card -->
+                    <div class="bg-slate-900/60 p-6 rounded-2xl border border-slate-800 backdrop-blur-sm space-y-6">
+                        <h4 class="text-lg font-bold text-white flex items-center gap-2 border-b border-slate-800 pb-3">
+                            <i class="fas fa-graduation-cap text-cyan-400"></i> Education Timeline
+                        </h4>
+
+                        <!-- Master's -->
+                        <div class="relative pl-6 border-l-2 border-cyan-500/50 space-y-1">
+                            <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-cyan-500 ring-4 ring-slate-900"></div>
+                            <span class="text-xs font-mono text-cyan-400 bg-cyan-950 px-2 py-0.5 rounded border border-cyan-800">2022 – 2024</span>
+                            <h5 class="text-base font-bold text-white pt-1">Master of Science in Computer Science (M.Sc.)</h5>
+                            <div class="text-sm text-slate-400">Savitribai Phule Pune University</div>
+                            <div class="inline-block mt-1 text-xs font-semibold px-2 py-0.5 rounded bg-emerald-950/70 text-emerald-400 border border-emerald-800">
+                                CGPA: 7.25 / 10.0
+                            </div>
+                        </div>
+
+                        <!-- Bachelor's -->
+                        <div class="relative pl-6 border-l-2 border-slate-700 space-y-1">
+                            <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-700 ring-4 ring-slate-900"></div>
+                            <span class="text-xs font-mono text-slate-400 bg-slate-800 px-2 py-0.5 rounded border border-slate-700">2018 – 2022</span>
+                            <h5 class="text-base font-bold text-white pt-1">Bachelor of Science in Computer Science (B.Sc.)</h5>
+                            <div class="text-sm text-slate-400">Savitribai Phule Pune University</div>
+                            <div class="inline-block mt-1 text-xs font-semibold px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">
+                                CGPA: 6.9 / 10.0
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Location & Contact Quick Box -->
+                    <div class="bg-gradient-to-br from-slate-900 to-slate-950 p-6 rounded-2xl border border-slate-800 space-y-4">
+                        <h4 class="text-base font-bold text-white flex items-center gap-2">
+                            <i class="fas fa-address-card text-emerald-400"></i> Contact Coordinates
+                        </h4>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-center gap-3 text-slate-300">
+                                <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-cyan-400"><i class="fas fa-envelope"></i></div>
+                                <div>
+                                    <div class="text-[11px] text-slate-500 font-mono">EMAIL</div>
+                                    <a href="mailto:chetan.khairnar234@gmail.com" class="hover:text-cyan-400">chetan.khairnar234@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-300">
+                                <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-emerald-400"><i class="fas fa-phone-alt"></i></div>
+                                <div>
+                                    <div class="text-[11px] text-slate-500 font-mono">PHONE</div>
+                                    <a href="tel:+918308952105" class="hover:text-emerald-400">+91 8308952105</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-300">
+                                <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-rose-400"><i class="fas fa-map-marker-alt"></i></div>
+                                <div>
+                                    <div class="text-[11px] text-slate-500 font-mono">LOCATION</div>
+                                    <span>Nashik, Maharashtra, India</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- TECHNICAL SKILLS MATRIX -->
+        <section id="skills" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-slate-900/30 rounded-3xl border border-slate-800/80 my-12">
+            <div class="space-y-4 text-center mb-16">
+                <div class="text-xs font-mono text-cyan-400 uppercase tracking-widest">&lt;Skills &amp; Technologies /&gt;</div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">The Technical Arsenal</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">
+                    Core languages, frameworks, database systems, and enterprise tooling I use to construct reliable production systems.
+                </p>
+
+                <!-- Skill Filter Tabs -->
+                <div class="flex flex-wrap justify-center gap-2 pt-6" id="skill-filter-container">
+                    <button class="skill-tab active px-4 py-2 rounded-xl text-xs font-mono transition-all" data-filter="all">All Tech</button>
+                    <button class="skill-tab px-4 py-2 rounded-xl text-xs font-mono transition-all" data-filter="backend">Backend &amp; Python</button>
+                    <button class="skill-tab px-4 py-2 rounded-xl text-xs font-mono transition-all" data-filter="database">Databases &amp; ORM</button>
+                    <button class="skill-tab px-4 py-2 rounded-xl text-xs font-mono transition-all" data-filter="cloud-tools">Cloud &amp; Tools</button>
+                    <button class="skill-tab px-4 py-2 rounded-xl text-xs font-mono transition-all" data-filter="mobile">Mobile &amp; App</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="skills-grid">
+                
+                <!-- Category: Backend & Python -->
+                <div class="skill-card backend bg-slate-900/70 p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/40 transition-all hover:-translate-y-1 group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-950 flex items-center justify-center text-cyan-400 text-2xl group-hover:scale-110 transition-transform">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <span class="text-xs font-mono text-cyan-400 bg-cyan-950/80 px-2.5 py-1 rounded border border-cyan-800">Primary Core</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Python &amp; Core Concepts</h3>
+                    <p class="text-xs text-slate-400 mb-4">OOP, Decorators, Generators, Iterators, File Handling, Exception Architecture, Multithreading fundamentals.</p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="skill-badge">OOP</span>
+                        <span class="skill-badge">Decorators</span>
+                        <span class="skill-badge">Generators</span>
+                        <span class="skill-badge">Iterators</span>
+                        <span class="skill-badge">File I/O</span>
+                        <span class="skill-badge">Exception Handling</span>
+                    </div>
+                </div>
+
+                <!-- Category: Django & DRF -->
+                <div class="skill-card backend bg-slate-900/70 p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/40 transition-all hover:-translate-y-1 group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-950 flex items-center justify-center text-emerald-400 text-2xl group-hover:scale-110 transition-transform">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <span class="text-xs font-mono text-emerald-400 bg-emerald-950/80 px-2.5 py-1 rounded border border-emerald-800">Framework</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Django &amp; REST Framework</h3>
+                    <p class="text-xs text-slate-400 mb-4">DRF ViewSets, ModelSerializers, JWT Authentication, Permissions, Middleware, Signals, and Django ORM.</p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="skill-badge">Django</span>
+                        <span class="skill-badge">DRF</span>
+                        <span class="skill-badge">Serializers</span>
+                        <span class="skill-badge">JWT Auth</span>
+                        <span class="skill-badge">RBAC</span>
+                        <span class="skill-badge">Django ORM</span>
+                    </div>
+                </div>
+
+                <!-- Category: Relational Databases -->
+                <div class="skill-card database bg-slate-900/70 p-6 rounded-2xl border border-slate-800 hover:border-blue-500/40 transition-all hover:-translate-y-1 group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-blue-950 flex items-center justify-center text-blue-400 text-2xl group-hover:scale-110 transition-transform">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <span class="text-xs font-mono text-blue-400 bg-blue-950/80 px-2.5 py-1 rounded border border-blue-800">Databases</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Oracle &amp; MySQL SQL</h3>
+                    <p class="text-xs text-slate-400 mb-4">Relational data modeling, foreign keys, index optimization, complex joins, triggers, and query tuning.</p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="skill-badge">Oracle SQL</span>
+                        <span class="skill-badge">MySQL</span>
+                        <span class="skill-badge">SQLite</span>
+                        <span class="skill-badge">Query Tuning</span>
+                        <span class="skill-badge">Schema Design</span>
+                    </div>
+                </div>
+
+                <!-- Category: Cloud & Infra -->
+                <div class="skill-card cloud-tools bg-slate-900/70 p-6 rounded-2xl border border-slate-800 hover:border-amber-500/40 transition-all hover:-translate-y-1 group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-amber-950 flex items-center justify-center text-amber-400 text-2xl group-hover:scale-110 transition-transform">
+                            <i class="fab fa-aws"></i>
+                        </div>
+                        <span class="text-xs font-mono text-amber-400 bg-amber-950/80 px-2.5 py-1 rounded border border-amber-800">Cloud Infra</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">AWS Cloud &amp; Caching</h3>
+                    <p class="text-xs text-slate-400 mb-4">Deploying backend services, managing static &amp; media assets with S3, EC2 instances, and caching strategies.</p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="skill-badge">AWS EC2</span>
+                        <span class="skill-badge">AWS S3</span>
+                        <span class="skill-badge">Caching</span>
+                        <span class="skill-badge">Linux/Windows</span>
+                    </div>
+                </div>
+
+                <!-- Category: API Testing & Dev Tools -->
+                <div class="skill-card cloud-tools bg-slate-900/70 p-6 rounded-2xl border border-slate-800 hover:border-purple-500/40 transition-all hover:-translate-y-1 group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-purple-950 flex items-center justify-center text-purple-400 text-2xl group-hover:scale-110 transition-transform">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <span class="text-xs font-mono text-purple-400 bg-purple-950/80 px-2.5 py-1 rounded border border-purple-800">Tooling</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">API Testing &amp; Tooling</h3>
+                    <p class="text-xs text-slate-400 mb-4">Postman collections, automated API tests, Swagger/OpenAPI docs, VS Code, Git version control &amp; GitHub.</p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="skill-badge">Postman</span>
+                        <span class="skill-badge">Swagger</span>
+                        <span class="skill-badge">Git &amp; GitHub</span>
+                        <span class="skill-badge">VS Code</span>
+                        <span class="skill-badge">Oracle SQL Dev</span>
+                    </div>
+                </div>
+
+                <!-- Category: Mobile & Multiplatform -->
+                <div class="skill-card mobile bg-slate-900/70 p-6 rounded-2xl border border-slate-800 hover:border-teal-500/40 transition-all hover:-translate-y-1 group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-teal-950 flex items-center justify-center text-teal-400 text-2xl group-hover:scale-110 transition-transform">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <span class="text-xs font-mono text-teal-400 bg-teal-950/80 px-2.5 py-1 rounded border border-teal-800">Mobile Stack</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Mobile &amp; Firebase</h3>
+                    <p class="text-xs text-slate-400 mb-4">Cross-platform development using Flutter, Java, Kotlin, Firebase Cloud Firestore/Auth, and embedded SQLite.</p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="skill-badge">Flutter</span>
+                        <span class="skill-badge">Java</span>
+                        <span class="skill-badge">Kotlin</span>
+                        <span class="skill-badge">Firebase</span>
+                        <span class="skill-badge">SQLite</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- INTERNSHIP EXPERIENCE SECTION -->
+        <section id="experience" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="space-y-4 text-center mb-16">
+                <div class="text-xs font-mono text-cyan-400 uppercase tracking-widest">&lt;Work Experience /&gt;</div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Industry Track Record</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">
+                    Real-world enterprise development delivering production features, schema improvements, and secure API gateways.
+                </p>
+            </div>
+
+            <div class="relative max-w-4xl mx-auto">
+                <div class="absolute left-0 sm:left-1/2 transform sm:-translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-500 via-blue-500 to-slate-800"></div>
+
+                <!-- Paarsh Infotech Experience Card -->
+                <div class="relative pl-8 sm:pl-0 sm:grid sm:grid-cols-2 sm:gap-12 items-center mb-12">
+                    
+                    <!-- Left Timeline marker & date for desktop -->
+                    <div class="hidden sm:block text-right pr-6 space-y-1">
+                        <span class="inline-block px-3 py-1 rounded-full bg-cyan-950 text-cyan-400 border border-cyan-800/80 font-mono text-xs font-semibold">
+                            Jan 2024 &ndash; Jul 2024
+                        </span>
+                        <div class="text-sm font-semibold text-slate-300">6 Months Full-Time Internship</div>
+                        <div class="text-xs text-slate-500"><i class="fas fa-map-marker-alt text-rose-400 mr-1"></i> Nashik / Pune, India</div>
+                    </div>
+
+                    <!-- Center circle -->
+                    <div class="absolute left-0 sm:left-1/2 transform -translate-x-1/2 top-4 w-6 h-6 rounded-full bg-cyan-500 ring-8 ring-slate-950 flex items-center justify-center text-slate-950 text-[10px]">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+
+                    <!-- Right Card Content -->
+                    <div class="sm:pl-6">
+                        <div class="bg-slate-900/80 p-6 sm:p-8 rounded-2xl border border-slate-800 hover:border-cyan-500/40 transition-all shadow-xl backdrop-blur-md space-y-4">
+                            <div class="sm:hidden flex items-center gap-2 mb-2">
+                                <span class="px-2.5 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800 font-mono text-[11px]">
+                                    Jan 2024 &ndash; Jul 2024
+                                </span>
+                            </div>
+
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Software Development Intern</h3>
+                                <div class="text-sm font-semibold text-cyan-400">Paarsh Infotech PVT. LTD.</div>
+                            </div>
+
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Contributed to enterprise backend systems, participating in sprint cycles, architectural reviews, schema optimization, and secure API delivery.
+                            </p>
+
+                            <!-- Responsibilities Checklist -->
+                            <ul class="space-y-2.5 text-xs text-slate-300">
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fas fa-check-circle text-cyan-400 mt-0.5 flex-shrink-0"></i>
+                                    <span><strong>Developed scalable backend services</strong> using Python, Django &amp; Django REST Framework (DRF) following modular design patterns.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fas fa-check-circle text-cyan-400 mt-0.5 flex-shrink-0"></i>
+                                    <span><strong>Designed optimized database schemas</strong> and improved SQL query performance, eliminating bottlenecks and N+1 query patterns.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fas fa-check-circle text-cyan-400 mt-0.5 flex-shrink-0"></i>
+                                    <span><strong>Built secure REST APIs</strong> with JWT token-based authentication and Role-Based Access Control (RBAC) to enforce endpoint protection.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fas fa-check-circle text-cyan-400 mt-0.5 flex-shrink-0"></i>
+                                    <span><strong>Implemented caching strategies</strong> to boost throughput and significantly lower database load under peak traffic.</span>
+                                </li>
+                            </ul>
+
+                            <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/80">
+                                <span class="skill-badge">Python</span>
+                                <span class="skill-badge">Django</span>
+                                <span class="skill-badge">DRF</span>
+                                <span class="skill-badge">REST APIs</span>
+                                <span class="skill-badge">JWT</span>
+                                <span class="skill-badge">SQL Caching</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED PROJECTS SHOWCASE -->
+        <section id="projects" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="space-y-4 text-center mb-16">
+                <div class="text-xs font-mono text-cyan-400 uppercase tracking-widest">&lt;Production Projects /&gt;</div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Featured Backend Architectures</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">
+                    Architectural deep-dives into core projects engineered with Python, Django, DRF, Oracle SQL &amp; MySQL.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <!-- Project 1: E-Commerce Backend Platform -->
+                <div class="bg-slate-900/70 rounded-2xl border border-slate-800 overflow-hidden hover:border-cyan-500/50 transition-all duration-300 flex flex-col group">
+                    <div class="p-6 sm:p-8 flex-1 space-y-5">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-mono text-cyan-400 bg-cyan-950/80 px-3 py-1 rounded-full border border-cyan-800">
+                                <i class="fas fa-shopping-bag mr-1"></i> E-Commerce Architecture
+                            </span>
+                            <span class="text-xs font-mono text-slate-400">REST &bull; JWT &bull; ORACLE</span>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">
+                            E-Commerce Backend Platform
+                        </h3>
+
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            A production-grade e-commerce backend built with <strong>Python, Django, and Django REST Framework</strong> paired with an enterprise <strong>Oracle SQL</strong> database. Manages end-to-end customer workflows from catalog discovery to checkout and stock deduction.
+                        </p>
+
+                        <!-- Key Achievements / Highlights -->
+                        <div class="space-y-2.5 text-xs text-slate-400">
+                            <div class="flex items-start gap-2">
+                                <i class="fas fa-angle-right text-cyan-400 mt-1"></i>
+                                <span><strong>REST API Suites:</strong> Product catalog, cart management, atomic order processing, and dynamic inventory management.</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i class="fas fa-angle-right text-cyan-400 mt-1"></i>
+                                <span><strong>Security &amp; Permissions:</strong> JWT-based authentication and role-based permissions (Customer vs Merchant vs Admin).</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i class="fas fa-angle-right text-cyan-400 mt-1"></i>
+                                <span><strong>Relational Modeling:</strong> Designed normalized relational tables for users, products, orders, and order items.</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i class="fas fa-angle-right text-cyan-400 mt-1"></i>
+                                <span><strong>Data Integrity:</strong> Serializers with custom validators ensuring consistent API payloads and zero data corruption.</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i class="fas fa-angle-right text-cyan-400 mt-1"></i>
+                                <span><strong>Quality Assurance:</strong> Rigorously verified endpoints using Postman collection runner with resilient exception handling.</span>
+                            </div>
+                        </div>
+
+                        <!-- Tech Stack Tags -->
+                        <div class="flex flex-wrap gap-2 pt-3">
+                            <span class="px-2.5 py-1 rounded bg-slate-800 text-xs text-slate-200 font-mono">Python</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-800 text-xs text-slate-200 font-mono">Django</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-800 text-xs text-slate-200 font-mono">DRF</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-800 text-xs text-slate-200 font-mono">Oracle SQL</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-800 text-xs text-slate-200 font-mono">JWT Auth</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-800 text-xs text-slate-200 font-mono">Postman</span>
+                        </div>
+                    </div>
+
+                    <!-- Project Footer / Actions -->
+                    <div class="p-6 bg-slate-950/60 border-t border-slate-800 flex items-center justify-between text-xs font-mono">
+                        <button class="project-modal-btn text-cyan-400 hover:text-cyan-300 font-semibold flex items-center gap-1.5" data-project="ecommerce">
+                            <i class="fas fa-code-branch"></i> View Architecture &amp; Schema
+                        </button>
+                        <a href="https://github.com/ChetanKhairnar7-ui" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white flex items-center gap-1">
+                            <span>GitHub</span> <i class="fas fa-external-link-alt text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Employee Management System -->
+                <div class="bg-slate-900/70 rounded-2xl border border-slate-800 overflow-hidden hover:border-emerald-500/50 transition-all duration-300 flex flex-col group">
+                    <div class="p-6 sm:p-8 flex-1 space-y-5">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-mono text-emerald-400 bg-emerald-950/80 px-3 py-1 rounded-full border border-emerald-800">
+                                <i class="fas fa-users-cog mr-1"></i> HR &amp; Enterprise System
+                            </span>
+                            <span class="text-xs font-mono text-slate-400">REST &bull; RBAC &bull; MYSQL</span>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors">
+                            Employee Management System
+                        </h3>
+
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            A centralized internal enterprise API designed to automate workforce management, department provisioning, daily attendance tracking, and hierarchical leave approvals.
+                        </p>
+
+                        <!-- Key Achievements / Highlights -->
+                        <div class="space-y-2.5 text-xs text-slate-400">
+                            <div class="flex items-start gap-2">
+                                <i class="fas fa-angle-right text-emerald-400 mt-1"></i>
+                                <span><strong>Enterprise REST APIs:</strong> Complete CRUD workflows for employee profiles, departmental hierarchies, and attendance logs.</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i class="fas fa-angle-right text-emerald-400 mt-1"></i>
+                                <span><strong>Relational Modeling:</strong> Designed MySQL models with foreign keys linking employees to departments and leave ledgers.</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i class="fas fa-angle-right text-emerald-400 mt-1"></i>
+                                <span><strong>Granular Access Control:</strong> Strict permission filters ensuring staff members can only view authorized records while HR has elevated audit access.</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i class="fas fa-angle-right text-emerald-400 mt-1"></i>
+                                <span><strong>Business Logic:</strong> Onboarding workflow with auto-generated credentials, leave request validation, and attendance summaries.</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i class="fas fa-angle-right text-emerald-400 mt-1"></i>
+                                <span><strong>Debugged &amp; Verified:</strong> Built custom exception handlers with standardized error JSON output for seamless client integration.</span>
+                            </div>
+                        </div>
+
+                        <!-- Tech Stack Tags -->
+                        <div class="flex flex-wrap gap-2 pt-3">
+                            <span class="px-2.5 py-1 rounded bg-slate-800 text-xs text-slate-200 font-mono">Python</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-800 text-xs text-slate-200 font-mono">Django</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-800 text-xs text-slate-200 font-mono">DRF</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-800 text-xs text-slate-200 font-mono">MySQL</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-800 text-xs text-slate-200 font-mono">RBAC</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-800 text-xs text-slate-200 font-mono">Postman</span>
+                        </div>
+                    </div>
+
+                    <!-- Project Footer / Actions -->
+                    <div class="p-6 bg-slate-950/60 border-t border-slate-800 flex items-center justify-between text-xs font-mono">
+                        <button class="project-modal-btn text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1.5" data-project="ems">
+                            <i class="fas fa-code-branch"></i> View Architecture &amp; Schema
+                        </button>
+                        <a href="https://github.com/ChetanKhairnar7-ui" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white flex items-center gap-1">
+                            <span>GitHub</span> <i class="fas fa-external-link-alt text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- INTERACTIVE LIVE CLI TERMINAL (IMPRESSIVE EFFECT #1) -->
+        <section id="terminal" class="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+            <div class="space-y-3 text-center mb-10">
+                <div class="text-xs font-mono text-cyan-400 uppercase tracking-widest">&lt;Interactive Shell /&gt;</div>
+                <h2 class="text-3xl font-bold text-white tracking-tight">Chetan's Backend CLI Sandbox</h2>
+                <p class="text-slate-400 max-w-xl mx-auto text-xs sm:text-sm">
+                    Recruiters &amp; engineers: Query my portfolio directly using Unix commands. Type <code class="text-cyan-400">help</code> or click the quick commands below!
+                </p>
+
+                <!-- Quick Command Pills -->
+                <div class="flex flex-wrap justify-center gap-2 pt-2">
+                    <button class="cmd-pill text-xs font-mono px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-cyan-400 hover:border-cyan-500/50 transition">help</button>
+                    <button class="cmd-pill text-xs font-mono px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-cyan-400 hover:border-cyan-500/50 transition">skills</button>
+                    <button class="cmd-pill text-xs font-mono px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-cyan-400 hover:border-cyan-500/50 transition">projects</button>
+                    <button class="cmd-pill text-xs font-mono px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-cyan-400 hover:border-cyan-500/50 transition">experience</button>
+                    <button class="cmd-pill text-xs font-mono px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-cyan-400 hover:border-cyan-500/50 transition">cat resume.txt</button>
+                    <button class="cmd-pill text-xs font-mono px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-cyan-400 hover:border-cyan-500/50 transition">sudo hire chetan</button>
+                    <button class="cmd-pill text-xs font-mono px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-cyan-400 hover:border-cyan-500/50 transition">clear</button>
+                </div>
+            </div>
+
+            <!-- Terminal Window -->
+            <div class="bg-slate-950/95 border border-slate-800 rounded-2xl shadow-2xl overflow-hidden font-mono text-xs sm:text-sm backdrop-blur-xl">
+                <!-- Titlebar -->
+                <div class="bg-slate-900/90 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-rose-500 inline-block"></span>
+                        <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
+                        <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+                        <span class="ml-2 text-slate-400 text-xs">chetan@backend-server:~ (bash 5.2)</span>
+                    </div>
+                    <div class="text-[11px] text-slate-500 hidden sm:block">Press [Tab] for autocomplete</div>
+                </div>
+
+                <!-- Terminal Body -->
+                <div id="terminal-output" class="p-5 space-y-3 min-h-[300px] max-h-[460px] overflow-y-auto text-slate-200">
+                    <div class="text-cyan-400 font-semibold">Welcome to Chetan Khairnar's Interactive Backend Console v2.4</div>
+                    <div class="text-slate-400">Type <span class="text-emerald-400 font-bold">'help'</span> to inspect available commands, or click any suggestion above.</div>
+                </div>
+
+                <!-- Input Line -->
+                <div class="px-5 py-3 bg-slate-900/50 border-t border-slate-800/80 flex items-center gap-2">
+                    <span class="text-cyan-400 font-bold">chetan@server:~$</span>
+                    <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" class="flex-1 bg-transparent text-emerald-400 font-mono focus:outline-none placeholder-slate-600 text-xs sm:text-sm" placeholder="type a command, e.g. 'skills' or 'projects'...">
+                </div>
+            </div>
+        </section>
+
+        <!-- REST API PLAYGROUND (IMPRESSIVE EFFECT #2) -->
+        <section id="api-playground" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+            <div class="space-y-4 text-center mb-12">
+                <div class="text-xs font-mono text-emerald-400 uppercase tracking-widest">&lt;Live Backend Swagger /&gt;</div>
+                <h2 class="text-3xl font-bold text-white tracking-tight">Interactive REST API Explorer</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto text-sm">
+                    Simulate real HTTP requests against Chetan's mock Django REST API backend with headers, query params, and JSON responses.
+                </p>
+            </div>
+
+            <div class="bg-slate-900/80 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl backdrop-blur-xl">
+                <!-- Request Bar -->
+                <div class="p-4 sm:p-6 bg-slate-950/60 border-b border-slate-800 flex flex-col md:flex-row items-stretch md:items-center gap-3">
+                    <div class="flex items-center gap-2">
+                        <select id="api-method" class="bg-slate-900 border border-slate-700 text-emerald-400 font-mono text-xs sm:text-sm font-bold rounded-lg px-3 py-2.5 focus:outline-none">
+                            <option value="GET">GET</option>
+                            <option value="POST">POST</option>
+                        </select>
+                    </div>
+
+                    <div class="flex-1 flex items-center bg-slate-900 border border-slate-800 rounded-lg px-3 py-2 font-mono text-xs sm:text-sm">
+                        <span class="text-slate-500 mr-1 select-none">https://api.chetankhairnar.dev</span>
+                        <select id="api-endpoint" class="flex-1 bg-transparent text-cyan-300 focus:outline-none font-mono">
+                            <option value="/api/v1/profile">/api/v1/profile</option>
+                            <option value="/api/v1/skills?category=backend">/api/v1/skills?category=backend</option>
+                            <option value="/api/v1/projects/ecommerce">/api/v1/projects/ecommerce</option>
+                            <option value="/api/v1/projects/ems">/api/v1/projects/ems</option>
+                            <option value="/api/v1/experience">/api/v1/experience</option>
+                            <option value="/api/v1/certifications">/api/v1/certifications</option>
+                            <option value="/api/v1/hire-me">/api/v1/hire-me (POST)</option>
+                        </select>
+                    </div>
+
+                    <button id="api-send-btn" class="px-6 py-2.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold font-mono text-xs sm:text-sm transition flex items-center justify-center gap-2">
+                        <i class="fas fa-play text-xs"></i> Send Request
+                    </button>
+                </div>
+
+                <!-- API Response Panel -->
+                <div class="p-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
+                    <!-- Left: Request Details -->
+                    <div class="lg:col-span-5 space-y-4">
+                        <div class="text-xs font-mono text-slate-400 flex items-center justify-between">
+                            <span>Request Headers</span>
+                            <span class="text-cyan-400">Content-Type: application/json</span>
+                        </div>
+                        <div class="bg-slate-950 p-3 rounded-lg border border-slate-800 font-mono text-[11px] text-slate-400 space-y-1">
+                            <div><strong class="text-slate-300">Accept:</strong> application/json</div>
+                            <div><strong class="text-slate-300">Authorization:</strong> Bearer jwt_recruiter_token_2026</div>
+                            <div><strong class="text-slate-300">User-Agent:</strong> Portfolio-Inspector/2.0</div>
+                        </div>
+
+                        <div id="post-body-container" class="hidden space-y-2">
+                            <label class="text-xs font-mono text-slate-300">Request JSON Body:</label>
+                            <textarea id="api-post-body" rows="4" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 font-mono text-xs text-emerald-400 focus:outline-none">{
+  "company": "Top Tech Corp",
+  "role": "Junior Backend Developer",
+  "interview_date": "Tomorrow"
+}</textarea>
+                        </div>
+
+                        <div class="text-xs text-slate-400">
+                            <i class="fas fa-info-circle text-cyan-400 mr-1"></i>
+                            Built with Django REST Framework standards: consistent JSON envelopes, HTTP status codes, and standard error handling.
+                        </div>
+                    </div>
+
+                    <!-- Right: Response Output -->
+                    <div class="lg:col-span-7 space-y-2">
+                        <div class="flex items-center justify-between text-xs font-mono">
+                            <span class="text-slate-400">Response Payload:</span>
+                            <div class="flex items-center gap-3">
+                                <span id="api-status-badge" class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 border border-emerald-800 font-bold">200 OK</span>
+                                <span id="api-latency" class="text-slate-500">14ms</span>
+                            </div>
+                        </div>
+
+                        <pre id="api-response-body" class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-xs font-mono text-slate-200 overflow-x-auto max-h-[320px] leading-relaxed">
+{
+  "developer": "Chetan Uttam Khairnar",
+  "role": "Python Backend Developer",
+  "location": "Nashik, Maharashtra",
+  "email": "chetan.khairnar234@gmail.com",
+  "phone": "+91 8308952105",
+  "core_skills": ["Python", "Django", "DRF", "Oracle SQL", "MySQL", "JWT Auth", "Postman"],
+  "degree": "M.Sc. Computer Science (CGPA: 7.25)",
+  "open_to_work": true
+}</pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CERTIFICATIONS SECTION WITH VERIFIED LINKS -->
+        <section id="certifications" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="space-y-4 text-center mb-16">
+                <div class="text-xs font-mono text-cyan-400 uppercase tracking-widest">&lt;Accreditations /&gt;</div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Verified Certifications</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">
+                    Credentials and industry certificates verified by IBM Cognitive Class, Coursera, and Paarsh Infotech.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Cert 1: Full Stack Development Internship -->
+                <div class="bg-slate-900/60 p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/50 transition-all flex flex-col justify-between group">
+                    <div class="space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-cyan-950/80 flex items-center justify-center text-cyan-400 text-lg border border-cyan-800/60">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h4 class="text-base font-bold text-white group-hover:text-cyan-400 transition-colors">
+                            Full Stack Development Internship Certification
+                        </h4>
+                        <p class="text-xs text-slate-400">
+                            Comprehensive certification verifying 6-month hands-on industry internship covering Django, DRF, relational DB design, and API architectures.
+                        </p>
+                    </div>
+                    <div class="pt-5 border-t border-slate-800/80 flex items-center justify-between text-xs font-mono">
+                        <span class="text-slate-500">Paarsh Infotech</span>
+                        <a href="https://drive.google.com/file/d/1F5y27uignX2n_rmq5wZ_wZM6VJ_xn8oJ/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:text-cyan-300 flex items-center gap-1 font-semibold">
+                            <span>Verify Credential</span> <i class="fas fa-external-link-alt text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cert 2: Python 101 For Data Science -->
+                <div class="bg-slate-900/60 p-6 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition-all flex flex-col justify-between group">
+                    <div class="space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-blue-950/80 flex items-center justify-center text-blue-400 text-lg border border-blue-800/60">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <h4 class="text-base font-bold text-white group-hover:text-blue-400 transition-colors">
+                            Python 101 For Data Science
+                        </h4>
+                        <p class="text-xs text-slate-400">
+                            Issued by cognitiveclass.ai (Powered by IBM). Covers core Python structures, data analysis workflows, and algorithm fundamentals.
+                        </p>
+                    </div>
+                    <div class="pt-5 border-t border-slate-800/80 flex items-center justify-between text-xs font-mono">
+                        <span class="text-slate-500">IBM Cognitive Class</span>
+                        <a href="https://courses.cognitiveclass.ai/certificates/76a594f166824986b6145c2f13dabf12" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 flex items-center gap-1 font-semibold">
+                            <span>Verify Credential</span> <i class="fas fa-external-link-alt text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cert 3: Machine Learning With Python -->
+                <div class="bg-slate-900/60 p-6 rounded-2xl border border-slate-800 hover:border-purple-500/50 transition-all flex flex-col justify-between group">
+                    <div class="space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-purple-950/80 flex items-center justify-center text-purple-400 text-lg border border-purple-800/60">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4 class="text-base font-bold text-white group-hover:text-purple-400 transition-colors">
+                            Machine Learning With Python
+                        </h4>
+                        <p class="text-xs text-slate-400">
+                            Issued by cognitiveclass.ai (Powered by IBM). Covers predictive modeling, regression, classification, and statistical logic with Python.
+                        </p>
+                    </div>
+                    <div class="pt-5 border-t border-slate-800/80 flex items-center justify-between text-xs font-mono">
+                        <span class="text-slate-500">IBM Cognitive Class</span>
+                        <a href="https://courses.cognitiveclass.ai/certificates/7d818d0dcd224c08ac0b495c2da22737" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-purple-300 flex items-center gap-1 font-semibold">
+                            <span>Verify Credential</span> <i class="fas fa-external-link-alt text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cert 4: SQL and Relational Databases 101 -->
+                <div class="bg-slate-900/60 p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/50 transition-all flex flex-col justify-between group">
+                    <div class="space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-950/80 flex items-center justify-center text-emerald-400 text-lg border border-emerald-800/60">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h4 class="text-base font-bold text-white group-hover:text-emerald-400 transition-colors">
+                            SQL and Relational Databases 101
+                        </h4>
+                        <p class="text-xs text-slate-400">
+                            Issued by cognitiveclass.ai (Powered by IBM). Focuses on relational schema structures, relational calculus, queries, views, and normalization.
+                        </p>
+                    </div>
+                    <div class="pt-5 border-t border-slate-800/80 flex items-center justify-between text-xs font-mono">
+                        <span class="text-slate-500">IBM Cognitive Class</span>
+                        <a href="https://courses.cognitiveclass.ai/certificates/1e35b4565d8046b498bc363c8be6c716" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 flex items-center gap-1 font-semibold">
+                            <span>Verify Credential</span> <i class="fas fa-external-link-alt text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cert 5: Prepare Data for Exploration -->
+                <div class="bg-slate-900/60 p-6 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition-all flex flex-col justify-between group">
+                    <div class="space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-amber-950/80 flex items-center justify-center text-amber-400 text-lg border border-amber-800/60">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4 class="text-base font-bold text-white group-hover:text-amber-400 transition-colors">
+                            Prepare Data for Exploration
+                        </h4>
+                        <p class="text-xs text-slate-400">
+                            Issued by Coursera. Specialized training in data cleansing, pipeline preparation, integrity checks, and validation rules.
+                        </p>
+                    </div>
+                    <div class="pt-5 border-t border-slate-800/80 flex items-center justify-between text-xs font-mono">
+                        <span class="text-slate-500">Coursera</span>
+                        <a href="https://www.coursera.org/account/accomplishments/verify/E6TTMB8SSFPY" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 flex items-center gap-1 font-semibold">
+                            <span>Verify Credential</span> <i class="fas fa-external-link-alt text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cert 6: Foundation : Data, Data, Everywhere -->
+                <div class="bg-slate-900/60 p-6 rounded-2xl border border-slate-800 hover:border-rose-500/50 transition-all flex flex-col justify-between group">
+                    <div class="space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-rose-950/80 flex items-center justify-center text-rose-400 text-lg border border-rose-800/60">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h4 class="text-base font-bold text-white group-hover:text-rose-400 transition-colors">
+                            Foundation : Data, Data, Everywhere
+                        </h4>
+                        <p class="text-xs text-slate-400">
+                            Issued by Coursera. Deep foundational understanding of data lifecycles, structured data ecosystems, and algorithmic reasoning.
+                        </p>
+                    </div>
+                    <div class="pt-5 border-t border-slate-800/80 flex items-center justify-between text-xs font-mono">
+                        <span class="text-slate-500">Coursera</span>
+                        <a href="https://www.coursera.org/account/accomplishments/verify/VKWUSKUPRR8D" target="_blank" rel="noopener noreferrer" class="text-rose-400 hover:text-rose-300 flex items-center gap-1 font-semibold">
+                            <span>Verify Credential</span> <i class="fas fa-external-link-alt text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="space-y-4 text-center mb-16">
+                <div class="text-xs font-mono text-cyan-400 uppercase tracking-widest">&lt;Initiate Connection /&gt;</div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Let's Build Something Resilient</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">
+                    I am actively seeking junior backend developer roles. Drop a message or reach out directly to schedule a technical discussion.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start max-w-5xl mx-auto">
+                
+                <!-- Contact Direct Info -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="bg-slate-900/70 p-6 sm:p-8 rounded-2xl border border-slate-800 space-y-6">
+                        <h3 class="text-xl font-bold text-white">Direct Channels</h3>
+                        
+                        <div class="space-y-4 text-sm">
+                            <a href="mailto:chetan.khairnar234@gmail.com" class="flex items-center gap-4 p-3 rounded-xl bg-slate-950/60 border border-slate-800/80 hover:border-cyan-500/50 transition group">
+                                <div class="w-10 h-10 rounded-lg bg-cyan-950 flex items-center justify-center text-cyan-400 text-base group-hover:scale-110 transition">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="overflow-hidden">
+                                    <div class="text-[11px] text-slate-500 font-mono">DIRECT EMAIL</div>
+                                    <div class="text-slate-200 font-medium truncate">chetan.khairnar234@gmail.com</div>
+                                </div>
+                            </a>
+
+                            <a href="tel:+918308952105" class="flex items-center gap-4 p-3 rounded-xl bg-slate-950/60 border border-slate-800/80 hover:border-emerald-500/50 transition group">
+                                <div class="w-10 h-10 rounded-lg bg-emerald-950 flex items-center justify-center text-emerald-400 text-base group-hover:scale-110 transition">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <div class="text-[11px] text-slate-500 font-mono">PHONE &bull; INDIA</div>
+                                    <div class="text-slate-200 font-medium">+91 8308952105</div>
+                                </div>
+                            </a>
+
+                            <a href="https://wa.me/918308952105" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-3 rounded-xl bg-slate-950/60 border border-slate-800/80 hover:border-emerald-500/50 transition group">
+                                <div class="w-10 h-10 rounded-lg bg-emerald-950 flex items-center justify-center text-emerald-400 text-base group-hover:scale-110 transition">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <div class="text-[11px] text-slate-500 font-mono">WHATSAPP CHAT</div>
+                                    <div class="text-slate-200 font-medium">Chat directly on WhatsApp</div>
+                                </div>
+                            </a>
+
+                            <a href="https://github.com/ChetanKhairnar7-ui" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-3 rounded-xl bg-slate-950/60 border border-slate-800/80 hover:border-blue-500/50 transition group">
+                                <div class="w-10 h-10 rounded-lg bg-blue-950 flex items-center justify-center text-blue-400 text-base group-hover:scale-110 transition">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <div>
+                                    <div class="text-[11px] text-slate-500 font-mono">GITHUB REPOSITORIES</div>
+                                    <div class="text-slate-200 font-medium">github.com/ChetanKhairnar7-ui</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Contact Form Simulator -->
+                <div class="lg:col-span-7 bg-slate-900/80 p-6 sm:p-8 rounded-2xl border border-slate-800 shadow-xl backdrop-blur-md">
+                    <form id="contact-form" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="space-y-1.5">
+                                <label class="text-xs font-mono text-slate-300">Your Name *</label>
+                                <input type="text" id="sender-name" required placeholder="Alex Turner" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-cyan-500 transition">
+                            </div>
+                            <div class="space-y-1.5">
+                                <label class="text-xs font-mono text-slate-300">Your Email *</label>
+                                <input type="email" id="sender-email" required placeholder="alex@company.com" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-cyan-500 transition">
+                            </div>
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-mono text-slate-300">Subject / Role Opportunity</label>
+                            <input type="text" id="sender-subject" placeholder="Junior Backend Developer Position" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-cyan-500 transition">
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-mono text-slate-300">Message / Inquiries *</label>
+                            <textarea id="sender-message" required rows="4" placeholder="Hi Chetan, we reviewed your backend portfolio and would love to invite you for an interview..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-cyan-500 transition"></textarea>
+                        </div>
+
+                        <button type="submit" id="submit-form-btn" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold text-sm shadow-lg shadow-cyan-500/20 transition-all flex items-center justify-center gap-2">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>Send Message Directly</span>
+                        </button>
+
+                        <div id="form-feedback" class="hidden p-3 rounded-xl text-xs font-mono text-center"></div>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ARCHITECTURE / PROJECT MODAL -->
+    <div id="project-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-2xl w-full p-6 sm:p-8 space-y-5 shadow-2xl relative">
+            <button id="close-modal" class="absolute top-5 right-5 text-slate-400 hover:text-white p-2">
+                <i class="fas fa-times text-lg"></i>
+            </button>
+            <div id="modal-content" class="space-y-4">
+                <!-- Dynamically injected via script.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-900 bg-slate-950 py-10 px-4 text-center text-xs text-slate-500 font-mono">
+        <div class="max-w-7xl mx-auto space-y-3">
+            <div class="flex items-center justify-center gap-2 text-cyan-400">
+                <span>&lt;/&gt;</span>
+                <span class="text-slate-300 font-bold">Chetan Uttam Khairnar</span>
+                <span>&bull;</span>
+                <span>Python Backend Developer</span>
+            </div>
+            <p>Designed with modern high-performance HTML5, Tailwind utilities &amp; Vanilla JS &bull; Hosted on GitHub</p>
+            <div class="flex items-center justify-center gap-4 text-sm text-slate-400 pt-2">
+                <a href="https://github.com/ChetanKhairnar7-ui" target="_blank" class="hover:text-cyan-400"><i class="fab fa-github"></i></a>
+                <a href="mailto:chetan.khairnar234@gmail.com" class="hover:text-cyan-400"><i class="fas fa-envelope"></i></a>
+                <a href="tel:+918308952105" class="hover:text-cyan-400"><i class="fas fa-phone"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
