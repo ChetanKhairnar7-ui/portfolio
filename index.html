@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chetan Khairnar | Python Backend Developer</title>
-    <meta name="description" content="Portfolio of Chetan Uttam Khairnar — Python Backend Developer specializing in Django, Django REST Framework, Oracle SQL, and scalable API architecture.">
+    <meta name="description" content="Portfolio of Chetan Uttam Khairnar — Python Backend Developer with experience in Django, Django REST Framework, Oracle SQL, MySQL, and JWT authentication.">
     <meta name="author" content="Chetan Uttam Khairnar">
 
     <!-- Fonts -->
@@ -37,627 +37,564 @@
     <!-- Particle Background -->
     <canvas id="particle-canvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
 
-    <!-- Ambient Orbs -->
-    <div class="fixed top-20 -left-32 w-96 h-96 bg-cyan-500/8 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="fixed bottom-20 -right-32 w-96 h-96 bg-blue-600/8 rounded-full blur-3xl pointer-events-none"></div>
+    <!-- Subtle ambient glow -->
+    <div class="fixed top-0 -left-40 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="fixed bottom-0 -right-40 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl pointer-events-none"></div>
 
-    <!-- ==================== NAVIGATION ==================== -->
-    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-slate-950/85 border-b border-slate-800/80 transition-all duration-300">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <!-- ============================================================
+         NAVIGATION
+    ============================================================ -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-slate-950/90 border-b border-slate-800/80 transition-all duration-300">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-18 py-4 flex items-center justify-between">
 
-            <!-- Logo -->
             <a href="#hero" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center font-mono font-bold text-slate-950 text-sm shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center font-mono font-bold text-slate-950 text-sm shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
                     CK
                 </div>
                 <div>
-                    <div class="font-bold text-base text-white group-hover:text-cyan-400 transition-colors leading-tight">Chetan Khairnar</div>
-                    <div class="text-[11px] font-mono text-cyan-400 tracking-wide">Python Backend Developer</div>
+                    <div class="font-bold text-sm text-white leading-tight">Chetan Khairnar</div>
+                    <div class="text-[10px] font-mono text-cyan-400">Python Backend Developer</div>
                 </div>
             </a>
 
             <!-- Desktop Nav -->
-            <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
-                <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
-                <a href="#skills" class="hover:text-cyan-400 transition-colors">Skills</a>
-                <a href="#experience" class="hover:text-cyan-400 transition-colors">Experience</a>
-                <a href="#projects" class="hover:text-cyan-400 transition-colors">Projects</a>
-                <a href="#certifications" class="hover:text-cyan-400 transition-colors">Certifications</a>
-                <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-400">
+                <a href="#about"          class="hover:text-white transition-colors">About</a>
+                <a href="#skills"         class="hover:text-white transition-colors">Skills</a>
+                <a href="#experience"     class="hover:text-white transition-colors">Experience</a>
+                <a href="#projects"       class="hover:text-white transition-colors">Projects</a>
+                <a href="#education"      class="hover:text-white transition-colors">Education</a>
+                <a href="#certifications" class="hover:text-white transition-colors">Certifications</a>
+                <a href="#contact"        class="hover:text-white transition-colors">Contact</a>
             </nav>
 
-            <!-- CTA -->
-            <div class="hidden sm:flex items-center gap-3">
-                <a href="mailto:chetan.khairnar234@gmail.com" class="px-4 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs shadow-md shadow-cyan-500/20 transition-all hover:scale-105 flex items-center gap-2">
-                    <i class="fas fa-paper-plane text-xs"></i> Hire Me
-                </a>
-            </div>
+            <a href="mailto:chetan.khairnar234@gmail.com" class="hidden sm:flex items-center gap-2 px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs shadow-md shadow-cyan-500/20 transition-all hover:scale-105">
+                <i class="fas fa-paper-plane text-xs"></i> Hire Me
+            </a>
 
-            <!-- Mobile Hamburger -->
-            <button id="mobile-menu-btn" class="md:hidden p-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 border border-slate-800" aria-label="Toggle menu">
+            <button id="mobile-menu-btn" class="md:hidden p-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-900 border border-slate-800" aria-label="Toggle menu">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
 
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-slate-950/98 border-b border-slate-800 px-6 py-5 flex-col gap-3 text-sm font-medium">
-            <a href="#about" class="mobile-link py-2 border-b border-slate-900 text-slate-300 hover:text-cyan-400">About</a>
-            <a href="#skills" class="mobile-link py-2 border-b border-slate-900 text-slate-300 hover:text-cyan-400">Skills</a>
-            <a href="#experience" class="mobile-link py-2 border-b border-slate-900 text-slate-300 hover:text-cyan-400">Experience</a>
-            <a href="#projects" class="mobile-link py-2 border-b border-slate-900 text-slate-300 hover:text-cyan-400">Projects</a>
-            <a href="#certifications" class="mobile-link py-2 border-b border-slate-900 text-slate-300 hover:text-cyan-400">Certifications</a>
-            <a href="#contact" class="mobile-link py-2 text-slate-300 hover:text-cyan-400">Contact</a>
+            <a href="#about"          class="mobile-link py-2 border-b border-slate-900 text-slate-400 hover:text-white">About</a>
+            <a href="#skills"         class="mobile-link py-2 border-b border-slate-900 text-slate-400 hover:text-white">Skills</a>
+            <a href="#experience"     class="mobile-link py-2 border-b border-slate-900 text-slate-400 hover:text-white">Experience</a>
+            <a href="#projects"       class="mobile-link py-2 border-b border-slate-900 text-slate-400 hover:text-white">Projects</a>
+            <a href="#education"      class="mobile-link py-2 border-b border-slate-900 text-slate-400 hover:text-white">Education</a>
+            <a href="#certifications" class="mobile-link py-2 border-b border-slate-900 text-slate-400 hover:text-white">Certifications</a>
+            <a href="#contact"        class="mobile-link py-2 text-slate-400 hover:text-white">Contact</a>
         </div>
     </header>
 
-    <main class="relative z-10 pt-28">
+    <main class="relative z-10 pt-24">
 
-        <!-- ==================== HERO ==================== -->
-        <section id="hero" class="min-h-[88vh] flex items-center px-4 sm:px-6 lg:px-8 py-16">
-            <div class="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- ============================================================
+             1. HERO
+        ============================================================ -->
+        <section id="hero" class="min-h-[86vh] flex items-center px-4 sm:px-6 lg:px-8 py-16">
+            <div class="max-w-5xl mx-auto w-full">
 
-                <!-- Left -->
-                <div class="lg:col-span-7 space-y-6">
-
-                    <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-cyan-950/70 border border-cyan-500/40 text-cyan-300 text-xs font-mono">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping absolute"></span>
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 relative"></span>
-                        Open to Work &mdash; Junior Backend Developer
-                    </div>
-
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15]">
-                        Python Backend<br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-blue-500">
-                            Developer
-                        </span>
-                    </h1>
-
-                    <p class="text-base sm:text-lg text-slate-300 max-w-xl leading-relaxed">
-                        I'm <strong class="text-white">Chetan Uttam Khairnar</strong> — an M.Sc. Computer Science graduate with production experience building Django REST APIs, designing relational database schemas, and implementing secure JWT authentication.
-                    </p>
-
-                    <!-- Location & Degree pills -->
-                    <div class="flex flex-wrap gap-3 text-xs font-mono text-slate-400">
-                        <span class="flex items-center gap-2 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800">
-                            <i class="fas fa-map-marker-alt text-rose-400"></i> Nashik, Maharashtra
-                        </span>
-                        <span class="flex items-center gap-2 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800">
-                            <i class="fas fa-graduation-cap text-cyan-400"></i> M.Sc. Computer Science &mdash; 7.25 CGPA
-                        </span>
-                    </div>
-
-                    <!-- Buttons -->
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#projects" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold text-sm shadow-lg shadow-cyan-500/20 transition-all hover:scale-105 flex items-center gap-2">
-                            View Projects <i class="fas fa-arrow-right text-xs"></i>
-                        </a>
-                        <a href="mailto:chetan.khairnar234@gmail.com" class="px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 text-sm transition-all flex items-center gap-2">
-                            <i class="fas fa-envelope text-cyan-400"></i> Email Me
-                        </a>
-                    </div>
-
-                    <!-- Social links -->
-                    <div class="flex items-center gap-5 text-xl text-slate-500">
-                        <a href="https://github.com/ChetanKhairnar7-ui" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors" title="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="mailto:chetan.khairnar234@gmail.com" class="hover:text-cyan-400 transition-colors" title="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                        <a href="https://wa.me/918308952105" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors" title="WhatsApp">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                    </div>
+                <!-- Availability badge -->
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 mb-6 rounded-full bg-cyan-950/70 border border-cyan-500/40 text-cyan-300 text-xs font-mono">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+                    </span>
+                    Open to Work &mdash; Junior Backend Developer
                 </div>
 
-                <!-- Right — Hero Code Card -->
-                <div class="lg:col-span-5">
-                    <div class="relative group">
-                        <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl blur-xl opacity-20 group-hover:opacity-35 transition duration-700"></div>
-                        <div class="relative bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-2xl font-mono text-xs text-slate-300 space-y-4">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight mb-5">
+                    Chetan Khairnar<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+                        Python Backend Developer
+                    </span>
+                </h1>
 
-                            <!-- Window bar -->
-                            <div class="flex items-center justify-between pb-3 border-b border-slate-800">
-                                <div class="flex items-center gap-1.5">
-                                    <span class="w-3 h-3 rounded-full bg-rose-500"></span>
-                                    <span class="w-3 h-3 rounded-full bg-amber-500"></span>
-                                    <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
-                                    <span class="ml-2 text-slate-500 text-xs">views.py</span>
-                                </div>
-                                <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-950 text-emerald-400 border border-emerald-800 font-semibold">
-                                    200 OK
-                                </span>
-                            </div>
+                <p class="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed mb-8">
+                    M.Sc. Computer Science graduate with hands-on internship experience building REST APIs with
+                    <strong class="text-white">Django</strong> and <strong class="text-white">Django REST Framework</strong>,
+                    designing relational database schemas in <strong class="text-white">Oracle SQL and MySQL</strong>,
+                    and implementing JWT-based authentication and role-based access control.
+                </p>
 
-                            <!-- Code -->
-                            <pre class="leading-relaxed text-[11px]">
-<span class="text-purple-400">from</span> rest_framework <span class="text-purple-400">import</span> viewsets
-<span class="text-purple-400">from</span> rest_framework.response <span class="text-purple-400">import</span> Response
+                <!-- CTA Buttons -->
+                <div class="flex flex-wrap gap-4 mb-10">
+                    <a href="#projects" class="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold text-sm shadow-lg shadow-cyan-500/20 transition-all hover:scale-105 flex items-center gap-2">
+                        View My Projects <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                    <a href="mailto:chetan.khairnar234@gmail.com" class="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white border border-slate-700 text-sm transition-all flex items-center gap-2">
+                        <i class="fas fa-envelope text-cyan-400"></i> chetan.khairnar234@gmail.com
+                    </a>
+                </div>
 
-<span class="text-blue-400">class</span> <span class="text-yellow-300">DeveloperViewSet</span>(viewsets.ViewSet):
-
-    <span class="text-blue-400">def</span> <span class="text-cyan-400">retrieve</span>(self, request):
-        <span class="text-purple-400">return</span> Response({
-            <span class="text-emerald-300">"name"</span>: <span class="text-emerald-300">"Chetan Uttam Khairnar"</span>,
-            <span class="text-emerald-300">"role"</span>: <span class="text-emerald-300">"Python Backend Developer"</span>,
-            <span class="text-emerald-300">"stack"</span>: [
-                <span class="text-emerald-300">"Python"</span>, <span class="text-emerald-300">"Django"</span>,
-                <span class="text-emerald-300">"DRF"</span>, <span class="text-emerald-300">"Oracle SQL"</span>
-            ],
-            <span class="text-emerald-300">"available"</span>: <span class="text-orange-400">True</span>
-        })</pre>
-
-                            <!-- Stats row -->
-                            <div class="grid grid-cols-3 gap-2 pt-3 border-t border-slate-800 text-center">
-                                <div class="bg-slate-950 p-2.5 rounded-lg border border-slate-800">
-                                    <div class="text-cyan-400 font-bold text-sm">M.Sc. CS</div>
-                                    <div class="text-[10px] text-slate-500">7.25 CGPA</div>
-                                </div>
-                                <div class="bg-slate-950 p-2.5 rounded-lg border border-slate-800">
-                                    <div class="text-emerald-400 font-bold text-sm">6 Months</div>
-                                    <div class="text-[10px] text-slate-500">Internship</div>
-                                </div>
-                                <div class="bg-slate-950 p-2.5 rounded-lg border border-slate-800">
-                                    <div class="text-yellow-400 font-bold text-sm">6 Certs</div>
-                                    <div class="text-[10px] text-slate-500">IBM &amp; Coursera</div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
+                <!-- Social links -->
+                <div class="flex items-center gap-5 text-slate-500">
+                    <a href="https://github.com/ChetanKhairnar7-ui" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-2 text-sm">
+                        <i class="fab fa-github text-xl"></i>
+                        <span class="hidden sm:inline">github.com/ChetanKhairnar7-ui</span>
+                    </a>
+                    <span class="text-slate-800">|</span>
+                    <a href="https://wa.me/918308952105" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors flex items-center gap-2 text-sm">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                        <span class="hidden sm:inline">+91 8308952105</span>
+                    </a>
                 </div>
 
             </div>
         </section>
 
-        <!-- ==================== ABOUT ==================== -->
-        <section id="about" class="py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-            <div class="mb-12">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">About Me</h2>
-                <div class="w-12 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full"></div>
+        <!-- ============================================================
+             2. ABOUT ME
+        ============================================================ -->
+        <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+            <h2 class="section-title">About Me</h2>
+
+            <div class="bg-slate-900/60 p-7 sm:p-8 rounded-2xl border border-slate-800 max-w-3xl">
+                <p class="text-slate-300 leading-relaxed text-base">
+                    I hold an M.Sc. in Computer Science from Savitribai Phule Pune University and completed a six-month
+                    software development internship at Paarsh Infotech PVT. LTD., where I worked on backend systems
+                    using Python, Django, and Django REST Framework. I am comfortable designing and building REST APIs,
+                    working with relational databases, writing SQL queries, and implementing authentication and access
+                    control. I am currently looking for a junior backend developer role where I can continue building
+                    reliable, well-structured server-side applications.
+                </p>
             </div>
+        </section>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <!-- ============================================================
+             3. TECHNICAL SKILLS
+        ============================================================ -->
+        <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+            <h2 class="section-title">Technical Skills</h2>
 
-                <!-- Bio -->
-                <div class="lg:col-span-7 space-y-4 bg-slate-900/60 p-7 rounded-2xl border border-slate-800">
-                    <p class="text-slate-300 leading-relaxed">
-                        I hold an <strong class="text-white">M.Sc. in Computer Science</strong> from Savitribai Phule Pune University and have hands-on industry experience from a 6-month software engineering internship at <strong class="text-white">Paarsh Infotech PVT. LTD.</strong>
-                    </p>
-                    <p class="text-slate-300 leading-relaxed">
-                        My work centers on building clean, well-structured REST APIs with <strong class="text-white">Django and DRF</strong>, implementing stateless <strong class="text-white">JWT authentication</strong>, and designing optimized relational schemas using <strong class="text-white">Oracle SQL and MySQL</strong>. I take measurable quality seriously — every API I ship is tested, documented, and exception-safe.
-                    </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                        <div class="p-4 rounded-xl bg-slate-950 border border-slate-800">
-                            <div class="text-cyan-400 font-semibold text-sm flex items-center gap-2 mb-1"><i class="fas fa-shield-alt"></i> Secure APIs</div>
-                            <p class="text-xs text-slate-400 leading-relaxed">JWT token management, permission classes, and request input validation on every endpoint.</p>
-                        </div>
-                        <div class="p-4 rounded-xl bg-slate-950 border border-slate-800">
-                            <div class="text-emerald-400 font-semibold text-sm flex items-center gap-2 mb-1"><i class="fas fa-database"></i> Database Design</div>
-                            <p class="text-xs text-slate-400 leading-relaxed">Normalized relational schemas, indexed queries, and Django ORM optimization to reduce latency.</p>
-                        </div>
+                <div class="skill-card hover:border-cyan-500/40">
+                    <div class="skill-icon bg-cyan-950 text-cyan-400 border-cyan-800/50">
+                        <i class="fab fa-python"></i>
                     </div>
+                    <h3 class="skill-name">Python</h3>
+                    <p class="skill-desc">Object-Oriented Programming, Decorators, Generators, Iterators, File Handling, Exception Handling.</p>
                 </div>
 
-                <!-- Education -->
-                <div class="lg:col-span-5 space-y-5 bg-slate-900/60 p-7 rounded-2xl border border-slate-800">
-                    <h3 class="text-lg font-bold text-white flex items-center gap-2 border-b border-slate-800 pb-3">
-                        <i class="fas fa-graduation-cap text-cyan-400"></i> Education
-                    </h3>
-
-                    <div class="relative pl-5 border-l-2 border-cyan-500/50 space-y-1">
-                        <div class="absolute -left-[9px] top-0.5 w-4 h-4 rounded-full bg-cyan-500 ring-4 ring-slate-900"></div>
-                        <span class="text-[11px] font-mono text-cyan-400">2022 – 2024</span>
-                        <h4 class="text-sm font-bold text-white">M.Sc. in Computer Science</h4>
-                        <p class="text-xs text-slate-400">Savitribai Phule Pune University</p>
-                        <span class="inline-block text-[11px] font-semibold px-2 py-0.5 rounded-full bg-emerald-950 text-emerald-400 border border-emerald-800">CGPA: 7.25 / 10</span>
+                <div class="skill-card hover:border-emerald-500/40">
+                    <div class="skill-icon bg-emerald-950 text-emerald-400 border-emerald-800/50">
+                        <i class="fas fa-network-wired"></i>
                     </div>
+                    <h3 class="skill-name">Django &amp; DRF</h3>
+                    <p class="skill-desc">ViewSets, ModelSerializers, JWT Authentication, Permissions &amp; Middleware, Django ORM.</p>
+                </div>
 
-                    <div class="relative pl-5 border-l-2 border-slate-700 space-y-1">
-                        <div class="absolute -left-[9px] top-0.5 w-4 h-4 rounded-full bg-slate-700 ring-4 ring-slate-900"></div>
-                        <span class="text-[11px] font-mono text-slate-500">2018 – 2022</span>
-                        <h4 class="text-sm font-bold text-white">B.Sc. in Computer Science</h4>
-                        <p class="text-xs text-slate-400">Savitribai Phule Pune University</p>
-                        <span class="inline-block text-[11px] font-semibold px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700">CGPA: 6.9 / 10</span>
+                <div class="skill-card hover:border-blue-500/40">
+                    <div class="skill-icon bg-blue-950 text-blue-400 border-blue-800/50">
+                        <i class="fas fa-database"></i>
                     </div>
+                    <h3 class="skill-name">Databases &amp; SQL</h3>
+                    <p class="skill-desc">Oracle SQL, MySQL, SQLite. Relational schema design, query writing, and normalization.</p>
+                </div>
+
+                <div class="skill-card hover:border-amber-500/40">
+                    <div class="skill-icon bg-amber-950 text-amber-400 border-amber-800/50">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <h3 class="skill-name">Cloud &amp; Infrastructure</h3>
+                    <p class="skill-desc">AWS EC2 and S3 for hosting and static asset storage. Basic Linux server operations.</p>
+                </div>
+
+                <div class="skill-card hover:border-purple-500/40">
+                    <div class="skill-icon bg-purple-950 text-purple-400 border-purple-800/50">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <h3 class="skill-name">Testing &amp; API Tools</h3>
+                    <p class="skill-desc">Postman for API testing, Swagger/OpenAPI for documentation, Git and GitHub for version control.</p>
                 </div>
 
             </div>
         </section>
 
-        <!-- ==================== SKILLS ==================== -->
-        <section id="skills" class="py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-            <div class="mb-12">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">Technical Skills</h2>
-                <div class="w-12 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full"></div>
-            </div>
+        <!-- ============================================================
+             4. EXPERIENCE
+        ============================================================ -->
+        <section id="experience" class="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+            <h2 class="section-title">Experience</h2>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-slate-900/70 p-7 sm:p-9 rounded-2xl border border-slate-800 hover:border-cyan-500/30 transition-all max-w-3xl">
 
-                <!-- Python -->
-                <div class="bg-slate-900/70 p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/40 transition-all hover:-translate-y-1">
-                    <div class="flex items-center gap-3 mb-3">
-                        <div class="w-10 h-10 rounded-xl bg-cyan-950 flex items-center justify-center text-cyan-400 border border-cyan-800/50">
-                            <i class="fab fa-python text-lg"></i>
-                        </div>
-                        <h3 class="font-bold text-white">Python</h3>
-                    </div>
-                    <p class="text-xs text-slate-400 mb-4 leading-relaxed">OOP, Decorators, Generators, Iterators, File Handling, and robust Exception Handling.</p>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span class="chip">OOP</span>
-                        <span class="chip">Decorators</span>
-                        <span class="chip">Generators</span>
-                        <span class="chip">Exception Handling</span>
-                    </div>
-                </div>
-
-                <!-- Django & DRF -->
-                <div class="bg-slate-900/70 p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/40 transition-all hover:-translate-y-1">
-                    <div class="flex items-center gap-3 mb-3">
-                        <div class="w-10 h-10 rounded-xl bg-emerald-950 flex items-center justify-center text-emerald-400 border border-emerald-800/50">
-                            <i class="fas fa-network-wired text-lg"></i>
-                        </div>
-                        <h3 class="font-bold text-white">Django &amp; DRF</h3>
-                    </div>
-                    <p class="text-xs text-slate-400 mb-4 leading-relaxed">ViewSets, ModelSerializers, JWT Authentication, Permissions, Middleware, and Django ORM.</p>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span class="chip">Django</span>
-                        <span class="chip">DRF</span>
-                        <span class="chip">Serializers</span>
-                        <span class="chip">JWT Auth</span>
-                        <span class="chip">RBAC</span>
-                    </div>
-                </div>
-
-                <!-- Databases -->
-                <div class="bg-slate-900/70 p-6 rounded-2xl border border-slate-800 hover:border-blue-500/40 transition-all hover:-translate-y-1">
-                    <div class="flex items-center gap-3 mb-3">
-                        <div class="w-10 h-10 rounded-xl bg-blue-950 flex items-center justify-center text-blue-400 border border-blue-800/50">
-                            <i class="fas fa-database text-lg"></i>
-                        </div>
-                        <h3 class="font-bold text-white">Databases</h3>
-                    </div>
-                    <p class="text-xs text-slate-400 mb-4 leading-relaxed">Relational schema design, normalization, index optimization, complex joins, and query tuning.</p>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span class="chip">Oracle SQL</span>
-                        <span class="chip">MySQL</span>
-                        <span class="chip">SQLite</span>
-                        <span class="chip">Django ORM</span>
-                    </div>
-                </div>
-
-                <!-- Cloud & Infra -->
-                <div class="bg-slate-900/70 p-6 rounded-2xl border border-slate-800 hover:border-amber-500/40 transition-all hover:-translate-y-1">
-                    <div class="flex items-center gap-3 mb-3">
-                        <div class="w-10 h-10 rounded-xl bg-amber-950 flex items-center justify-center text-amber-400 border border-amber-800/50">
-                            <i class="fab fa-aws text-lg"></i>
-                        </div>
-                        <h3 class="font-bold text-white">Cloud &amp; Infrastructure</h3>
-                    </div>
-                    <p class="text-xs text-slate-400 mb-4 leading-relaxed">AWS EC2 and S3 for compute and static asset hosting; in-memory caching to reduce database load.</p>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span class="chip">AWS EC2</span>
-                        <span class="chip">AWS S3</span>
-                        <span class="chip">Caching</span>
-                        <span class="chip">Linux</span>
-                    </div>
-                </div>
-
-                <!-- Testing & Tools -->
-                <div class="bg-slate-900/70 p-6 rounded-2xl border border-slate-800 hover:border-purple-500/40 transition-all hover:-translate-y-1">
-                    <div class="flex items-center gap-3 mb-3">
-                        <div class="w-10 h-10 rounded-xl bg-purple-950 flex items-center justify-center text-purple-400 border border-purple-800/50">
-                            <i class="fas fa-tools text-lg"></i>
-                        </div>
-                        <h3 class="font-bold text-white">Testing &amp; Tools</h3>
-                    </div>
-                    <p class="text-xs text-slate-400 mb-4 leading-relaxed">API testing with Postman and Swagger/OpenAPI; version control and code review via Git and GitHub.</p>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span class="chip">Postman</span>
-                        <span class="chip">Swagger</span>
-                        <span class="chip">Git &amp; GitHub</span>
-                        <span class="chip">VS Code</span>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ==================== EXPERIENCE ==================== -->
-        <section id="experience" class="py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-            <div class="mb-12">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">Experience</h2>
-                <div class="w-12 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full"></div>
-            </div>
-
-            <div class="bg-slate-900/80 p-8 sm:p-10 rounded-2xl border border-slate-800 hover:border-cyan-500/40 transition-all shadow-xl space-y-6 max-w-4xl">
-
-                <!-- Header -->
-                <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 pb-5 border-b border-slate-800">
+                <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 pb-5 border-b border-slate-800 mb-5">
                     <div>
-                        <h3 class="text-xl font-bold text-white">Software Development Intern</h3>
+                        <h3 class="text-lg font-bold text-white">Software Development Intern</h3>
                         <div class="text-cyan-400 font-semibold text-sm mt-0.5">Paarsh Infotech PVT. LTD.</div>
                     </div>
-                    <div class="flex flex-col items-start sm:items-end gap-1 text-xs text-slate-400 font-mono">
-                        <span class="px-3 py-1 rounded-full bg-cyan-950 text-cyan-400 border border-cyan-800">Jan 2024 &ndash; Jul 2024</span>
-                        <span class="flex items-center gap-1"><i class="fas fa-map-marker-alt text-rose-400 text-[10px]"></i> Nashik, Maharashtra</span>
+                    <div class="flex-shrink-0 text-right">
+                        <span class="inline-block px-3 py-1 rounded-full bg-cyan-950 text-cyan-400 border border-cyan-800 text-xs font-mono">Jan 2024 – Jul 2024</span>
+                        <div class="text-xs text-slate-500 mt-1"><i class="fas fa-map-marker-alt text-rose-400 mr-1"></i>Nashik, Maharashtra</div>
                     </div>
                 </div>
 
-                <!-- Responsibilities -->
-                <ul class="space-y-3">
-                    <li class="flex items-start gap-3 text-sm text-slate-300">
+                <ul class="space-y-3 text-sm text-slate-300">
+                    <li class="flex items-start gap-3">
                         <i class="fas fa-check-circle text-cyan-400 mt-0.5 flex-shrink-0"></i>
-                        <span>Built scalable REST APIs using <strong>Django and DRF</strong>, reducing average response time by improving serializer logic and minimizing database roundtrips.</span>
+                        <span>Developed REST APIs using Django and Django REST Framework for backend features including data retrieval, creation, and update operations.</span>
                     </li>
-                    <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <li class="flex items-start gap-3">
                         <i class="fas fa-check-circle text-cyan-400 mt-0.5 flex-shrink-0"></i>
-                        <span>Redesigned existing database schemas and optimized slow SQL queries, cutting query execution time and resolving critical N+1 bottlenecks.</span>
+                        <span>Designed and worked with relational database schemas in Oracle SQL and MySQL, writing queries and improving how data was structured and retrieved.</span>
                     </li>
-                    <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <li class="flex items-start gap-3">
                         <i class="fas fa-check-circle text-cyan-400 mt-0.5 flex-shrink-0"></i>
-                        <span>Implemented <strong>JWT-based authentication</strong> and Role-Based Access Control (RBAC) to enforce endpoint-level security across all protected routes.</span>
+                        <span>Implemented JWT-based authentication and role-based access control to restrict API endpoints to authorized users.</span>
                     </li>
-                    <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <li class="flex items-start gap-3">
                         <i class="fas fa-check-circle text-cyan-400 mt-0.5 flex-shrink-0"></i>
-                        <span>Integrated in-memory caching strategies that reduced repetitive database load under concurrent user traffic.</span>
+                        <span>Explored caching strategies and applied serializer-level optimizations to improve backend response efficiency.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-cyan-400 mt-0.5 flex-shrink-0"></i>
+                        <span>Tested all API endpoints using Postman and ensured consistent error handling and response formatting across the application.</span>
                     </li>
                 </ul>
 
-                <!-- Tech tags -->
-                <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800">
-                    <span class="chip">Python</span>
-                    <span class="chip">Django</span>
-                    <span class="chip">DRF</span>
-                    <span class="chip">Oracle SQL</span>
-                    <span class="chip">MySQL</span>
-                    <span class="chip">JWT Auth</span>
-                    <span class="chip">Caching</span>
-                </div>
-
             </div>
         </section>
 
-        <!-- ==================== PROJECTS ==================== -->
-        <section id="projects" class="py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-            <div class="mb-12">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">Projects</h2>
-                <div class="w-12 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full"></div>
-            </div>
+        <!-- ============================================================
+             5. PROJECTS
+        ============================================================ -->
+        <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+            <h2 class="section-title">Projects</h2>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="space-y-8">
 
-                <!-- Project 1 -->
-                <div class="bg-slate-900/70 rounded-2xl border border-slate-800 hover:border-cyan-500/40 transition-all flex flex-col group">
-                    <div class="p-7 flex-1 space-y-4">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-mono text-cyan-400 bg-cyan-950/70 px-3 py-1 rounded-full border border-cyan-800">
-                                Django &bull; DRF &bull; Oracle SQL
-                            </span>
-                            <i class="fas fa-shopping-cart text-slate-600 group-hover:text-cyan-500 transition-colors"></i>
+                <!-- PROJECT 1: E-Commerce Backend -->
+                <div class="bg-slate-900/70 rounded-2xl border border-slate-800 hover:border-cyan-500/30 transition-all">
+                    <div class="p-7 sm:p-9">
+
+                        <!-- Header -->
+                        <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-5">
+                            <div>
+                                <span class="inline-block text-[11px] font-mono text-cyan-400 bg-cyan-950/70 px-2.5 py-0.5 rounded-full border border-cyan-800 mb-2">
+                                    Django &bull; DRF &bull; Oracle SQL
+                                </span>
+                                <h3 class="text-xl font-bold text-white">E-Commerce Backend Platform</h3>
+                            </div>
+                            <a href="https://github.com/ChetanKhairnar7-ui" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 flex items-center gap-1.5 text-xs text-slate-500 hover:text-white transition font-mono">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
                         </div>
 
-                        <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
-                            E-Commerce Backend Platform
-                        </h3>
-
-                        <p class="text-sm text-slate-300 leading-relaxed">
-                            Production-grade backend for a multi-role e-commerce system. Supports product catalog management, cart operations, and atomic order processing with inventory reservation, all secured behind JWT authentication.
+                        <!-- Overview -->
+                        <p class="text-sm text-slate-300 leading-relaxed mb-6">
+                            A backend application built to handle the core workflows of an e-commerce platform — product browsing, cart management, order placement, and inventory tracking. Built with Django REST Framework and backed by an Oracle SQL relational database.
                         </p>
 
-                        <ul class="space-y-2 text-xs text-slate-400">
-                            <li class="flex gap-2"><i class="fas fa-angle-right text-cyan-400 mt-0.5"></i>Designed normalized Oracle SQL schemas with referential integrity constraints.</li>
-                            <li class="flex gap-2"><i class="fas fa-angle-right text-cyan-400 mt-0.5"></i>Implemented atomic transactions to prevent partial order states and data corruption.</li>
-                            <li class="flex gap-2"><i class="fas fa-angle-right text-cyan-400 mt-0.5"></i>Enforced role-based endpoint access for Customer, Merchant, and Admin roles.</li>
-                        </ul>
-
-                        <div class="flex flex-wrap gap-1.5 pt-1">
-                            <span class="chip">Python</span><span class="chip">Django</span><span class="chip">DRF</span>
-                            <span class="chip">Oracle SQL</span><span class="chip">JWT</span><span class="chip">Postman</span>
+                        <!-- Key Features -->
+                        <div class="mb-6">
+                            <h4 class="text-xs font-mono text-slate-400 uppercase tracking-wider mb-3">Key Features</h4>
+                            <ul class="space-y-2 text-sm text-slate-300">
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fas fa-angle-right text-cyan-400 mt-0.5 flex-shrink-0"></i>
+                                    <span>REST API endpoints for product catalog, cart operations, order placement, and inventory management.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fas fa-angle-right text-cyan-400 mt-0.5 flex-shrink-0"></i>
+                                    <span>JWT-based authentication with separate permission levels for Customer, Merchant, and Admin roles.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fas fa-angle-right text-cyan-400 mt-0.5 flex-shrink-0"></i>
+                                    <span>Atomic order transactions using <code class="text-cyan-400 font-mono text-xs bg-slate-950 px-1 rounded">transaction.atomic()</code> and <code class="text-cyan-400 font-mono text-xs bg-slate-950 px-1 rounded">select_for_update()</code> to prevent stock inconsistencies.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fas fa-angle-right text-cyan-400 mt-0.5 flex-shrink-0"></i>
+                                    <span>DRF serializers with custom validators to handle cart quantities, duplicate items, and decimal price arithmetic.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fas fa-angle-right text-cyan-400 mt-0.5 flex-shrink-0"></i>
+                                    <span>Normalized Oracle SQL schema with foreign key constraints, tested end-to-end using Postman.</span>
+                                </li>
+                            </ul>
                         </div>
-                    </div>
 
-                    <div class="px-7 py-4 bg-slate-950/60 border-t border-slate-800 flex items-center justify-between text-xs font-mono">
-                        <button class="view-schema-btn text-cyan-400 hover:text-cyan-300 font-semibold flex items-center gap-1.5" data-project="ecommerce">
-                            <i class="fas fa-sitemap"></i> View DB Schema
-                        </button>
-                        <a href="https://github.com/ChetanKhairnar7-ui" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-white flex items-center gap-1">
-                            GitHub <i class="fas fa-external-link-alt text-[10px]"></i>
-                        </a>
+                        <!-- DB Schema + Code — side by side on larger screens -->
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-6">
+
+                            <!-- Schema diagram -->
+                            <div>
+                                <h4 class="text-xs font-mono text-emerald-400 uppercase tracking-wider mb-2">Database Schema</h4>
+                                <pre class="bg-slate-950 border border-slate-800 rounded-xl p-4 text-[11px] font-mono text-slate-300 leading-relaxed overflow-x-auto">
+[User]                [Product]
+  id PK                 id PK
+  email (unique)        title
+  password_hash         price (decimal)
+  role (enum)           stock_count (int)
+     |                       |
+     | 1:N                   | 1:N
+     v                       v
+[Order] ─────────► [OrderItem]
+  id PK               id PK
+  user_id  FK         order_id   FK
+  status              product_id FK
+  total_amount        quantity (int)
+  created_at          unit_price (decimal)</pre>
+                            </div>
+
+                            <!-- Code example -->
+                            <div>
+                                <h4 class="text-xs font-mono text-cyan-400 uppercase tracking-wider mb-2">Transaction Handling</h4>
+                                <pre class="bg-slate-950 border border-slate-800 rounded-xl p-4 text-[11px] font-mono text-emerald-300 leading-relaxed overflow-x-auto">
+<span class="text-purple-400">from</span> django.db <span class="text-purple-400">import</span> transaction
+<span class="text-purple-400">from</span> decimal <span class="text-purple-400">import</span> Decimal
+
+<span class="text-slate-500"># select_for_update locks the row</span>
+<span class="text-slate-500"># preventing race conditions on stock</span>
+@transaction.atomic
+<span class="text-blue-400">def</span> <span class="text-cyan-400">place_order</span>(user, cart_items):
+    order = Order.objects.create(
+        user=user, status=<span class="text-emerald-300">'PENDING'</span>
+    )
+    total = Decimal(<span class="text-emerald-300">'0.00'</span>)
+    <span class="text-blue-400">for</span> item <span class="text-blue-400">in</span> cart_items:
+        product = Product.objects\
+            .select_for_update()\
+            .get(id=item.product_id)
+        <span class="text-blue-400">if</span> product.stock_count < item.qty:
+            <span class="text-blue-400">raise</span> ValidationError(
+                <span class="text-emerald-300">f"Out of stock: {product.title}"</span>
+            )
+        product.stock_count -= item.qty
+        product.save()
+        OrderItem.objects.create(
+            order=order,
+            product=product,
+            quantity=item.qty,
+            unit_price=product.price
+        )
+        total += product.price * item.qty
+    order.total_amount = total
+    order.save()
+    <span class="text-blue-400">return</span> order</pre>
+                            </div>
+
+                        </div>
+
                     </div>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="bg-slate-900/70 rounded-2xl border border-slate-800 hover:border-emerald-500/40 transition-all flex flex-col group">
-                    <div class="p-7 flex-1 space-y-4">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-mono text-emerald-400 bg-emerald-950/70 px-3 py-1 rounded-full border border-emerald-800">
-                                Django &bull; DRF &bull; MySQL
-                            </span>
-                            <i class="fas fa-users-cog text-slate-600 group-hover:text-emerald-500 transition-colors"></i>
+                <!-- PROJECT 2: Employee Management System -->
+                <div class="bg-slate-900/70 rounded-2xl border border-slate-800 hover:border-emerald-500/30 transition-all">
+                    <div class="p-7 sm:p-9">
+
+                        <!-- Header -->
+                        <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-5">
+                            <div>
+                                <span class="inline-block text-[11px] font-mono text-emerald-400 bg-emerald-950/70 px-2.5 py-0.5 rounded-full border border-emerald-800 mb-2">
+                                    Django &bull; DRF &bull; MySQL
+                                </span>
+                                <h3 class="text-xl font-bold text-white">Employee Management System</h3>
+                            </div>
+                            <a href="https://github.com/ChetanKhairnar7-ui" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 flex items-center gap-1.5 text-xs text-slate-500 hover:text-white transition font-mono">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
                         </div>
 
-                        <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">
-                            Employee Management System
-                        </h3>
-
-                        <p class="text-sm text-slate-300 leading-relaxed">
-                            Internal enterprise API for managing employee profiles, department structures, daily attendance, and multi-level leave approval workflows with strict role-based access control.
+                        <!-- Overview -->
+                        <p class="text-sm text-slate-300 leading-relaxed mb-6">
+                            An internal backend system for managing employee records, department structures, daily attendance logging, and leave requests. Designed with a focus on access control — each role sees only the data it is authorized to access.
                         </p>
 
-                        <ul class="space-y-2 text-xs text-slate-400">
-                            <li class="flex gap-2"><i class="fas fa-angle-right text-emerald-400 mt-0.5"></i>MySQL relational models linking employees, departments, attendance, and leave records.</li>
-                            <li class="flex gap-2"><i class="fas fa-angle-right text-emerald-400 mt-0.5"></i>Permission filters ensure staff access only their own data; HR sees all department records.</li>
-                            <li class="flex gap-2"><i class="fas fa-angle-right text-emerald-400 mt-0.5"></i>Standardized JSON error envelopes for clean client integration and debugging.</li>
-                        </ul>
-
-                        <div class="flex flex-wrap gap-1.5 pt-1">
-                            <span class="chip">Python</span><span class="chip">Django</span><span class="chip">DRF</span>
-                            <span class="chip">MySQL</span><span class="chip">RBAC</span><span class="chip">Postman</span>
+                        <!-- Key Features -->
+                        <div class="mb-6">
+                            <h4 class="text-xs font-mono text-slate-400 uppercase tracking-wider mb-3">Key Features</h4>
+                            <ul class="space-y-2 text-sm text-slate-300">
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fas fa-angle-right text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                                    <span>REST API endpoints for employee profiles, department assignment, attendance check-in/out, and leave requests.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fas fa-angle-right text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                                    <span>Object-level RBAC: Staff can only access their own records; HR can manage all employees in their department.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fas fa-angle-right text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                                    <span>MySQL relational models linking employees, departments, attendance logs, and leave records through foreign keys.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fas fa-angle-right text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                                    <span>Standardized JSON error responses across all endpoints, tested and verified using Postman.</span>
+                                </li>
+                            </ul>
                         </div>
-                    </div>
 
-                    <div class="px-7 py-4 bg-slate-950/60 border-t border-slate-800 flex items-center justify-between text-xs font-mono">
-                        <button class="view-schema-btn text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1.5" data-project="ems">
-                            <i class="fas fa-sitemap"></i> View DB Schema
-                        </button>
-                        <a href="https://github.com/ChetanKhairnar7-ui" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-white flex items-center gap-1">
-                            GitHub <i class="fas fa-external-link-alt text-[10px]"></i>
-                        </a>
+                        <!-- Schema diagram -->
+                        <div>
+                            <h4 class="text-xs font-mono text-emerald-400 uppercase tracking-wider mb-2">Database Schema</h4>
+                            <pre class="bg-slate-950 border border-slate-800 rounded-xl p-4 text-[11px] font-mono text-slate-300 leading-relaxed overflow-x-auto">
+[Department]
+  id PK, name, head_id
+
+[Employee]
+  id PK, employee_code, name, email
+  department_id FK → Department
+  role: Admin | HR | Staff
+
+[AttendanceLog]                [LeaveRequest]
+  id PK                          id PK
+  employee_id FK → Employee       employee_id FK → Employee
+  check_in (datetime)             start_date, end_date
+  check_out (datetime)            status: Pending | Approved | Rejected
+  date                            approved_by FK → Employee</pre>
+                        </div>
+
                     </div>
                 </div>
 
             </div>
         </section>
 
-        <!-- ==================== CERTIFICATIONS ==================== -->
-        <section id="certifications" class="py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-            <div class="mb-12">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">Certifications</h2>
-                <div class="w-12 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full"></div>
+        <!-- ============================================================
+             6. EDUCATION
+        ============================================================ -->
+        <section id="education" class="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+            <h2 class="section-title">Education</h2>
+
+            <div class="space-y-4 max-w-2xl">
+
+                <div class="bg-slate-900/60 p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/30 transition-all flex items-start gap-5">
+                    <div class="w-10 h-10 rounded-xl bg-cyan-950 flex items-center justify-center text-cyan-400 border border-cyan-800/50 flex-shrink-0 mt-0.5">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div>
+                        <div class="text-[11px] font-mono text-cyan-400 mb-0.5">2022 – 2024</div>
+                        <h3 class="text-base font-bold text-white">Master of Science in Computer Science (M.Sc.)</h3>
+                        <div class="text-sm text-slate-400">Savitribai Phule Pune University</div>
+                        <span class="inline-block mt-2 text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-emerald-950 text-emerald-400 border border-emerald-800">CGPA: 7.25 / 10.0</span>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900/60 p-6 rounded-2xl border border-slate-800 hover:border-slate-700 transition-all flex items-start gap-5">
+                    <div class="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-slate-400 border border-slate-700/50 flex-shrink-0 mt-0.5">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div>
+                        <div class="text-[11px] font-mono text-slate-500 mb-0.5">2018 – 2022</div>
+                        <h3 class="text-base font-bold text-white">Bachelor of Science in Computer Science (B.Sc.)</h3>
+                        <div class="text-sm text-slate-400">Savitribai Phule Pune University</div>
+                        <span class="inline-block mt-2 text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700">CGPA: 6.9 / 10.0</span>
+                    </div>
+                </div>
+
             </div>
+        </section>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- ============================================================
+             7. CERTIFICATIONS
+        ============================================================ -->
+        <section id="certifications" class="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+            <h2 class="section-title">Certifications</h2>
 
-                <!-- Cert 1 -->
-                <div class="bg-slate-900/60 p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/40 transition-all flex flex-col justify-between group">
-                    <div class="space-y-2 mb-5">
-                        <div class="w-9 h-9 rounded-xl bg-cyan-950 flex items-center justify-center text-cyan-400 border border-cyan-800/50 text-base">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                        <h4 class="text-sm font-bold text-white group-hover:text-cyan-400 transition-colors">Full Stack Development Internship Certification</h4>
-                        <p class="text-xs text-slate-500">Paarsh Infotech PVT. LTD.</p>
-                    </div>
-                    <a href="https://drive.google.com/file/d/1F5y27uignX2n_rmq5wZ_wZM6VJ_xn8oJ/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5 font-semibold">
-                        Verify <i class="fas fa-external-link-alt text-[9px]"></i>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+                <div class="cert-card group">
+                    <div class="cert-icon bg-cyan-950 text-cyan-400 border-cyan-800/50"><i class="fas fa-certificate"></i></div>
+                    <h4 class="cert-title group-hover:text-cyan-400">Full Stack Development Internship Certification</h4>
+                    <p class="cert-issuer">Paarsh Infotech PVT. LTD.</p>
+                    <a href="https://drive.google.com/file/d/1F5y27uignX2n_rmq5wZ_wZM6VJ_xn8oJ/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-link text-cyan-400 hover:text-cyan-300">
+                        Verify Certificate <i class="fas fa-external-link-alt text-[9px]"></i>
                     </a>
                 </div>
 
-                <!-- Cert 2 -->
-                <div class="bg-slate-900/60 p-6 rounded-2xl border border-slate-800 hover:border-blue-500/40 transition-all flex flex-col justify-between group">
-                    <div class="space-y-2 mb-5">
-                        <div class="w-9 h-9 rounded-xl bg-blue-950 flex items-center justify-center text-blue-400 border border-blue-800/50 text-base">
-                            <i class="fab fa-python"></i>
-                        </div>
-                        <h4 class="text-sm font-bold text-white group-hover:text-blue-400 transition-colors">Python 101 For Data Science</h4>
-                        <p class="text-xs text-slate-500">IBM Cognitive Class</p>
-                    </div>
-                    <a href="https://courses.cognitiveclass.ai/certificates/76a594f166824986b6145c2f13dabf12" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-blue-400 hover:text-blue-300 flex items-center gap-1.5 font-semibold">
-                        Verify <i class="fas fa-external-link-alt text-[9px]"></i>
+                <div class="cert-card group">
+                    <div class="cert-icon bg-blue-950 text-blue-400 border-blue-800/50"><i class="fab fa-python"></i></div>
+                    <h4 class="cert-title group-hover:text-blue-400">Python 101 For Data Science</h4>
+                    <p class="cert-issuer">IBM Cognitive Class</p>
+                    <a href="https://courses.cognitiveclass.ai/certificates/76a594f166824986b6145c2f13dabf12" target="_blank" rel="noopener noreferrer" class="cert-link text-blue-400 hover:text-blue-300">
+                        Verify Certificate <i class="fas fa-external-link-alt text-[9px]"></i>
                     </a>
                 </div>
 
-                <!-- Cert 3 -->
-                <div class="bg-slate-900/60 p-6 rounded-2xl border border-slate-800 hover:border-purple-500/40 transition-all flex flex-col justify-between group">
-                    <div class="space-y-2 mb-5">
-                        <div class="w-9 h-9 rounded-xl bg-purple-950 flex items-center justify-center text-purple-400 border border-purple-800/50 text-base">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <h4 class="text-sm font-bold text-white group-hover:text-purple-400 transition-colors">Machine Learning With Python</h4>
-                        <p class="text-xs text-slate-500">IBM Cognitive Class</p>
-                    </div>
-                    <a href="https://courses.cognitiveclass.ai/certificates/7d818d0dcd224c08ac0b495c2da22737" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-purple-400 hover:text-purple-300 flex items-center gap-1.5 font-semibold">
-                        Verify <i class="fas fa-external-link-alt text-[9px]"></i>
+                <div class="cert-card group">
+                    <div class="cert-icon bg-purple-950 text-purple-400 border-purple-800/50"><i class="fas fa-brain"></i></div>
+                    <h4 class="cert-title group-hover:text-purple-400">Machine Learning With Python</h4>
+                    <p class="cert-issuer">IBM Cognitive Class</p>
+                    <a href="https://courses.cognitiveclass.ai/certificates/7d818d0dcd224c08ac0b495c2da22737" target="_blank" rel="noopener noreferrer" class="cert-link text-purple-400 hover:text-purple-300">
+                        Verify Certificate <i class="fas fa-external-link-alt text-[9px]"></i>
                     </a>
                 </div>
 
-                <!-- Cert 4 -->
-                <div class="bg-slate-900/60 p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/40 transition-all flex flex-col justify-between group">
-                    <div class="space-y-2 mb-5">
-                        <div class="w-9 h-9 rounded-xl bg-emerald-950 flex items-center justify-center text-emerald-400 border border-emerald-800/50 text-base">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <h4 class="text-sm font-bold text-white group-hover:text-emerald-400 transition-colors">SQL and Relational Databases 101</h4>
-                        <p class="text-xs text-slate-500">IBM Cognitive Class</p>
-                    </div>
-                    <a href="https://courses.cognitiveclass.ai/certificates/1e35b4565d8046b498bc363c8be6c716" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-emerald-400 hover:text-emerald-300 flex items-center gap-1.5 font-semibold">
-                        Verify <i class="fas fa-external-link-alt text-[9px]"></i>
+                <div class="cert-card group">
+                    <div class="cert-icon bg-emerald-950 text-emerald-400 border-emerald-800/50"><i class="fas fa-database"></i></div>
+                    <h4 class="cert-title group-hover:text-emerald-400">SQL and Relational Databases 101</h4>
+                    <p class="cert-issuer">IBM Cognitive Class</p>
+                    <a href="https://courses.cognitiveclass.ai/certificates/1e35b4565d8046b498bc363c8be6c716" target="_blank" rel="noopener noreferrer" class="cert-link text-emerald-400 hover:text-emerald-300">
+                        Verify Certificate <i class="fas fa-external-link-alt text-[9px]"></i>
                     </a>
                 </div>
 
-                <!-- Cert 5 -->
-                <div class="bg-slate-900/60 p-6 rounded-2xl border border-slate-800 hover:border-amber-500/40 transition-all flex flex-col justify-between group">
-                    <div class="space-y-2 mb-5">
-                        <div class="w-9 h-9 rounded-xl bg-amber-950 flex items-center justify-center text-amber-400 border border-amber-800/50 text-base">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h4 class="text-sm font-bold text-white group-hover:text-amber-400 transition-colors">Prepare Data for Exploration</h4>
-                        <p class="text-xs text-slate-500">Coursera (Google Data Analytics)</p>
-                    </div>
-                    <a href="https://www.coursera.org/account/accomplishments/verify/E6TTMB8SSFPY" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-amber-400 hover:text-amber-300 flex items-center gap-1.5 font-semibold">
-                        Verify <i class="fas fa-external-link-alt text-[9px]"></i>
+                <div class="cert-card group">
+                    <div class="cert-icon bg-amber-950 text-amber-400 border-amber-800/50"><i class="fas fa-chart-line"></i></div>
+                    <h4 class="cert-title group-hover:text-amber-400">Prepare Data for Exploration</h4>
+                    <p class="cert-issuer">Coursera — Google Data Analytics</p>
+                    <a href="https://www.coursera.org/account/accomplishments/verify/E6TTMB8SSFPY" target="_blank" rel="noopener noreferrer" class="cert-link text-amber-400 hover:text-amber-300">
+                        Verify Certificate <i class="fas fa-external-link-alt text-[9px]"></i>
                     </a>
                 </div>
 
-                <!-- Cert 6 -->
-                <div class="bg-slate-900/60 p-6 rounded-2xl border border-slate-800 hover:border-rose-500/40 transition-all flex flex-col justify-between group">
-                    <div class="space-y-2 mb-5">
-                        <div class="w-9 h-9 rounded-xl bg-rose-950 flex items-center justify-center text-rose-400 border border-rose-800/50 text-base">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <h4 class="text-sm font-bold text-white group-hover:text-rose-400 transition-colors">Foundation: Data, Data, Everywhere</h4>
-                        <p class="text-xs text-slate-500">Coursera (Google Data Analytics)</p>
-                    </div>
-                    <a href="https://www.coursera.org/account/accomplishments/verify/VKWUSKUPRR8D" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-rose-400 hover:text-rose-300 flex items-center gap-1.5 font-semibold">
-                        Verify <i class="fas fa-external-link-alt text-[9px]"></i>
+                <div class="cert-card group">
+                    <div class="cert-icon bg-rose-950 text-rose-400 border-rose-800/50"><i class="fas fa-globe"></i></div>
+                    <h4 class="cert-title group-hover:text-rose-400">Foundation: Data, Data, Everywhere</h4>
+                    <p class="cert-issuer">Coursera — Google Data Analytics</p>
+                    <a href="https://www.coursera.org/account/accomplishments/verify/VKWUSKUPRR8D" target="_blank" rel="noopener noreferrer" class="cert-link text-rose-400 hover:text-rose-300">
+                        Verify Certificate <i class="fas fa-external-link-alt text-[9px]"></i>
                     </a>
                 </div>
 
             </div>
         </section>
 
-        <!-- ==================== CONTACT ==================== -->
-        <section id="contact" class="py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-            <div class="mb-12">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">Contact</h2>
-                <div class="w-12 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full"></div>
-                <p class="text-slate-400 text-sm mt-4 max-w-xl">
-                    I am actively looking for junior backend developer roles. Feel free to reach out via email, phone, or the form below.
-                </p>
-            </div>
+        <!-- ============================================================
+             8. CONTACT
+        ============================================================ -->
+        <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+            <h2 class="section-title">Contact</h2>
+            <p class="text-slate-400 text-sm mb-8 max-w-xl">
+                I am actively looking for junior backend developer positions. Reach out by email, phone, or the form below.
+            </p>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 max-w-5xl items-start">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
                 <!-- Direct channels -->
                 <div class="lg:col-span-5 space-y-3">
-                    <a href="mailto:chetan.khairnar234@gmail.com" class="flex items-center gap-4 p-4 rounded-2xl bg-slate-900 border border-slate-800 hover:border-cyan-500/40 transition group">
-                        <div class="w-10 h-10 rounded-xl bg-cyan-950 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition flex-shrink-0">
-                            <i class="fas fa-envelope"></i>
-                        </div>
+                    <a href="mailto:chetan.khairnar234@gmail.com" class="contact-channel group">
+                        <div class="contact-icon bg-cyan-950 text-cyan-400 group-hover:scale-105"><i class="fas fa-envelope"></i></div>
                         <div>
-                            <div class="text-[10px] text-slate-500 font-mono uppercase">Email</div>
-                            <div class="text-sm text-slate-200 font-medium">chetan.khairnar234@gmail.com</div>
+                            <div class="contact-label">Email</div>
+                            <div class="contact-value">chetan.khairnar234@gmail.com</div>
                         </div>
                     </a>
 
-                    <a href="tel:+918308952105" class="flex items-center gap-4 p-4 rounded-2xl bg-slate-900 border border-slate-800 hover:border-emerald-500/40 transition group">
-                        <div class="w-10 h-10 rounded-xl bg-emerald-950 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition flex-shrink-0">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
+                    <a href="tel:+918308952105" class="contact-channel group">
+                        <div class="contact-icon bg-emerald-950 text-emerald-400 group-hover:scale-105"><i class="fas fa-phone-alt"></i></div>
                         <div>
-                            <div class="text-[10px] text-slate-500 font-mono uppercase">Phone</div>
-                            <div class="text-sm text-slate-200 font-medium">+91 8308952105</div>
+                            <div class="contact-label">Phone</div>
+                            <div class="contact-value">+91 8308952105</div>
                         </div>
                     </a>
 
-                    <a href="https://github.com/ChetanKhairnar7-ui" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-2xl bg-slate-900 border border-slate-800 hover:border-white/20 transition group">
-                        <div class="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-white group-hover:scale-110 transition flex-shrink-0">
-                            <i class="fab fa-github"></i>
-                        </div>
+                    <a href="https://github.com/ChetanKhairnar7-ui" target="_blank" rel="noopener noreferrer" class="contact-channel group">
+                        <div class="contact-icon bg-slate-800 text-white group-hover:scale-105"><i class="fab fa-github"></i></div>
                         <div>
-                            <div class="text-[10px] text-slate-500 font-mono uppercase">GitHub</div>
-                            <div class="text-sm text-slate-200 font-medium">ChetanKhairnar7-ui</div>
+                            <div class="contact-label">GitHub</div>
+                            <div class="contact-value">ChetanKhairnar7-ui</div>
                         </div>
                     </a>
 
-                    <a href="https://wa.me/918308952105" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-2xl bg-slate-900 border border-slate-800 hover:border-emerald-500/40 transition group">
-                        <div class="w-10 h-10 rounded-xl bg-emerald-950 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition flex-shrink-0">
-                            <i class="fab fa-whatsapp"></i>
-                        </div>
+                    <a href="https://wa.me/918308952105" target="_blank" rel="noopener noreferrer" class="contact-channel group">
+                        <div class="contact-icon bg-emerald-950 text-emerald-400 group-hover:scale-105"><i class="fab fa-whatsapp"></i></div>
                         <div>
-                            <div class="text-[10px] text-slate-500 font-mono uppercase">WhatsApp</div>
-                            <div class="text-sm text-slate-200 font-medium">Message on WhatsApp</div>
+                            <div class="contact-label">WhatsApp</div>
+                            <div class="contact-value">Message on WhatsApp</div>
                         </div>
                     </a>
                 </div>
@@ -666,27 +603,32 @@
                 <div class="lg:col-span-7 bg-slate-900/80 p-7 rounded-2xl border border-slate-800 shadow-xl">
                     <form id="contact-form" class="space-y-4">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div class="space-y-1.5">
-                                <label class="text-xs text-slate-400 font-medium">Your Name</label>
-                                <input type="text" id="form-name" required placeholder="Your name" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-cyan-500 transition">
+                            <div>
+                                <label class="block text-xs text-slate-400 font-medium mb-1.5">Your Name *</label>
+                                <input type="text" id="form-name" required placeholder="Your name"
+                                    class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-cyan-500 transition">
                             </div>
-                            <div class="space-y-1.5">
-                                <label class="text-xs text-slate-400 font-medium">Your Email</label>
-                                <input type="email" id="form-email" required placeholder="your@email.com" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-cyan-500 transition">
+                            <div>
+                                <label class="block text-xs text-slate-400 font-medium mb-1.5">Your Email *</label>
+                                <input type="email" id="form-email" required placeholder="your@email.com"
+                                    class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-cyan-500 transition">
                             </div>
                         </div>
 
-                        <div class="space-y-1.5">
-                            <label class="text-xs text-slate-400 font-medium">Subject</label>
-                            <input type="text" id="form-subject" placeholder="e.g. Backend Developer Opportunity" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-cyan-500 transition">
+                        <div>
+                            <label class="block text-xs text-slate-400 font-medium mb-1.5">Subject</label>
+                            <input type="text" id="form-subject" placeholder="e.g. Backend Developer Opportunity"
+                                class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-cyan-500 transition">
                         </div>
 
-                        <div class="space-y-1.5">
-                            <label class="text-xs text-slate-400 font-medium">Message</label>
-                            <textarea id="form-message" required rows="4" placeholder="Your message..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-cyan-500 transition"></textarea>
+                        <div>
+                            <label class="block text-xs text-slate-400 font-medium mb-1.5">Message *</label>
+                            <textarea id="form-message" required rows="4" placeholder="Your message..."
+                                class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-cyan-500 transition resize-none"></textarea>
                         </div>
 
-                        <button type="submit" id="form-submit-btn" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold text-sm shadow-lg shadow-cyan-500/20 transition-all flex items-center justify-center gap-2">
+                        <button type="submit" id="form-submit-btn"
+                            class="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold text-sm shadow-lg shadow-cyan-500/15 transition-all flex items-center justify-center gap-2">
                             <i class="fas fa-paper-plane"></i> Send Message
                         </button>
 
@@ -699,25 +641,13 @@
 
     </main>
 
-    <!-- DB Schema Modal -->
-    <div id="schema-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-2xl w-full p-6 sm:p-8 space-y-5 shadow-2xl relative max-h-[90vh] overflow-y-auto">
-            <button id="close-modal-btn" class="absolute top-5 right-5 text-slate-400 hover:text-white p-1.5 rounded-lg hover:bg-slate-800 transition">
-                <i class="fas fa-times"></i>
-            </button>
-            <div id="schema-modal-body" class="space-y-5"></div>
-        </div>
-    </div>
-
-    <!-- FOOTER -->
-    <footer class="border-t border-slate-900 bg-slate-950 py-10 px-4 text-center">
-        <div class="max-w-6xl mx-auto space-y-3">
-            <div class="flex items-center justify-center gap-2 text-sm">
-                <span class="text-slate-300 font-bold">Chetan Uttam Khairnar</span>
-                <span class="text-slate-600">&mdash;</span>
-                <span class="text-slate-500 text-xs">Python Backend Developer</span>
-            </div>
-            <div class="flex items-center justify-center gap-5 text-slate-500">
+    <!-- ============================================================
+         FOOTER
+    ============================================================ -->
+    <footer class="border-t border-slate-900 bg-slate-950 py-8 px-4 text-center">
+        <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-600">
+            <span class="text-slate-400 font-medium">Chetan Uttam Khairnar &mdash; Python Backend Developer</span>
+            <div class="flex items-center gap-4">
                 <a href="https://github.com/ChetanKhairnar7-ui" target="_blank" class="hover:text-cyan-400 transition-colors text-base"><i class="fab fa-github"></i></a>
                 <a href="mailto:chetan.khairnar234@gmail.com" class="hover:text-cyan-400 transition-colors text-base"><i class="fas fa-envelope"></i></a>
                 <a href="tel:+918308952105" class="hover:text-cyan-400 transition-colors text-base"><i class="fas fa-phone"></i></a>
