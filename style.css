@@ -1,0 +1,116 @@
+/* ==========================================================================
+   CHETAN KHAIRNAR - PROFESSIONAL PORTFOLIO STYLES
+   ========================================================================== */
+
+/* Custom Smooth Scroll & Selection */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #030712;
+}
+::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #06b6d4;
+}
+
+/* Background Canvas */
+#particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Subtle Slow Ambient Glow Animations */
+@keyframes pulseSlow {
+    0%, 100% {
+        opacity: 0.15;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.28;
+        transform: scale(1.1);
+    }
+}
+.animate-pulse-slow {
+    animation: pulseSlow 8s ease-in-out infinite;
+}
+
+/* Skill Chips */
+.skill-chip {
+    display: inline-block;
+    padding: 0.25rem 0.65rem;
+    font-size: 0.7rem;
+    font-family: 'Fira Code', monospace;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    background-color: rgba(15, 23, 42, 0.85);
+    color: #cbd5e1;
+    border: 1px solid rgba(51, 65, 85, 0.6);
+    transition: all 0.2s ease;
+}
+.skill-chip:hover {
+    border-color: #06b6d4;
+    color: #22d3ee;
+    background-color: rgba(8, 51, 68, 0.4);
+}
+
+/* Skill Filter Buttons */
+.skill-filter-btn {
+    background-color: rgba(15, 23, 42, 0.8);
+    color: #94a3b8;
+    border: 1px solid rgba(51, 65, 85, 0.7);
+    cursor: pointer;
+}
+.skill-filter-btn:hover {
+    color: #ffffff;
+    border-color: #06b6d4;
+}
+.skill-filter-btn.active {
+    background-color: #06b6d4;
+    color: #030712;
+    font-weight: 700;
+    border-color: #06b6d4;
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.35);
+}
+
+/* Terminal Cursor */
+.cli-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 14px;
+    background-color: #34d399;
+    animation: blink 1s step-start infinite;
+    vertical-align: middle;
+}
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* Modal Open/Close Transitions */
+#schema-modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Code block scrollbars */
+pre::-webkit-scrollbar {
+    height: 6px;
+}
+pre::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 3px;
+}
